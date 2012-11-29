@@ -5,13 +5,28 @@ Ball Control is an open source Sphero controller.
 
 To use Ball Control, you first need a Ball - get your Sphero from http://gosphero.com - and in the UK from http://www.firebox.com/product/5367/Sphero
 
-Ball Control provides all this functionality on *WP8* and makes use of *Portable Class Libraries*, *Xamarin.Mobile library*, and *MvvmCross*
+----------
 
-Ball Control includes a first version using *Xaramin Mono for Android* - this is in draft at present.
+###WHAT?###
 
-Ball Control will also soon provide *WinRT* and *Xamarin MonoTouch for iOS* version :)
+Ball Control's first target platform is *Windows Phone 8* where it makes use of *Portable Class Libraries*, *Xamarin.Mobile library*, and *MvvmCross*
 
-The app allows you to control your ball - currently you can control it's heading, it's rolling, it's colour and it's tail. More will follow - especially if you join this project and help make it even more awesome.
+The app allows you to control your ball - currently you can control:
+
+- heading
+- rolling
+- colo(u)r
+- tail light on/off
+
+Using the WP8 APIs - abstracted inside PCL MvvmCross plugins, you can control these things using:
+
+- touch
+- tilt
+- voice
+
+The current repo includes a first version of Ball Control for *Xaramin Mono for Android*. this is in draft at present - it works but is not styled yet. Ball Control will also soon provide *WinRT* and *Xamarin MonoTouch for iOS* version :)
+
+More will follow - especially if you join this project and help make it even more awesome.
 
 **IMPORTANT:** Before you attempt to compile and use the code, please read the ***GETTING STARTED*** section first!!!
  
@@ -29,22 +44,23 @@ This project includes:
 
 - Xamarin.Mobile
 	- Media Picker
-		- Really easy way to take a photo - took seconds to add to my app
-
+        - Really easy way to take a photo - took seconds to add to my app
+<br/><br/>					
 - MvvmCross
-	- Mvvm Platform
-		- Plugins via IoC and PCL for code sharing
-
+    - Mvvm Platform
+	     - Plugins via IoC and PCL for code sharing
+<br/><br/>					
 - Windows Phone 8 SDK
 	- Voice Control
 	- BlueTooth
 	- Accelerometer
-
+<br/><br/>					
 - Android SDK with Xamarin's Mono for Android
 	- BlueTooth
 	- Accelerometer
 	- more coming soon....
 
+	
 Other platforms and features will be added soon....
 
 There are some NUnit unit tests included - I ran out of time a bit - so coverage is not huge. More will be added!
@@ -91,9 +107,14 @@ If you have trouble building the PCL projects in MonoDevelop, then we may need t
 ----------
 
 ###LINKS###
+-   WP8 Dev - https://dev.windowsphone.com/en-us
+-   Mono for Android - http://xamarin.com/monoforandroid
+-   MonoTouch - http://xamarin.com/monoforandroid
+-   Windows Store Dev - http://msdn.microsoft.com/en-us/windows/apps
 -	Xamarin.Mobile - http://xamarin.com/mobileapi
 -	MvvmCross - https://github.com/slodge/MvvmCross
 -   Sphero - http://gosphero.com
+-   Some cats - http://catoverflow.com
 
 ----------
 
@@ -101,11 +122,12 @@ If you have trouble building the PCL projects in MonoDevelop, then we may need t
 - Sphero - for a totally awesome toy!
 - Nokia - for the best phone ever - Lumia 920
 - Xamarin - Thanks to all the folks at Xamarin who make coding for mobile in C# a dream :)
+- Daniel Plaisted - for PCL skill, intelligence and determination
 - Denmark - for Anders Hejlsberg
 - James Newton-King - for JSON.Net which I use everywhere
 - Paul Foster - for talking about Sphero 
 - Justin Angel - for the amazing WP8 What's New guide
-- the ITR Mobility team - for MonoCross
+- the ITR Mobility team - for MonoCross which inspired MvvmCross a year ago
 - Jonathan Dick (@redth) - Thanks for saying yes to letting me steal this readme format :)
 
 ----------
@@ -116,4 +138,3 @@ This app is in no way endorsed by Sphero - but we love them!
 This app talks to your Sphero over BlueTooth using some of the publicly available low level APIs. 
 
 It is definitely possible to get carried away and to have too much fun with your balls. *Please play nicely.*
-
