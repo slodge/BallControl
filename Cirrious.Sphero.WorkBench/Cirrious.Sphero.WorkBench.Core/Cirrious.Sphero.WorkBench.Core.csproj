@@ -91,6 +91,9 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.Share">
       <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Share.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser">
+      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
+    </Reference>
     <Reference Include="CrossUI.Core">
       <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\CrossUI.Core.dll</HintPath>
     </Reference>

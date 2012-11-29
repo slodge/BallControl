@@ -175,6 +175,13 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
             SendRollCommand();
         }
 
+        [SpeechAction("End")]
+        public void End()
+        {
+            // not sure why - but don't send isStop:true at present?!
+            Stop();
+        }
+
         [SpeechAction("Red")]
         public void Red()
         {
