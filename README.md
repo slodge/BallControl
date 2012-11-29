@@ -1,9 +1,9 @@
 # Ball Control #
-#### a BlueTooth/Accelerometer/Camera/VoiceControl app for fun and for Xamarin’s Developer Showdown ####
+#### A BlueTooth/Accelerometer/Camera/VoiceControl app for fun and for Developer Competition ####
 
 Ball Control is an open source Sphero controller.
 
-To use Ball Control, you first need a Ball - http://gosphero.com
+To use Ball Control, you first need a Ball - get your Sphero from http://gosphero.com - and in the UK from http://www.firebox.com/product/5367/Sphero
 
 Ball Control provides all this functionality on *WP8* and makes use of *Portable Class Libraries*, *Xamarin.Mobile library*, and *MvvmCross*
 
@@ -23,7 +23,7 @@ The app allows you to control your ball - currently you can control it's heading
 
 
 ###PROJECT DETAILS###
-The goal of this application was an entry into the contest, specifically showing off the use of Xamarin.Mobile. However it was also a chance for me to write some fun code after being on 'business logic' for a few months. This application uses MvvmCross and Portable Class Libraries throughout. There are no #if statements allowed.
+The goal of this application was to show off C# Mobile coding, specifically showing off the use of C# native solutions including the use of Xamarin.Mobile products. It was also a chance for me to write some fun code after being on 'business logic' for a few months. This application uses MvvmCross and Portable Class Libraries throughout - there are no #if statements allowed - it's **AmazeBalls**.
 
 This project includes:
 
@@ -32,12 +32,8 @@ This project includes:
 		- Really easy way to take a photo - took seconds to add to my app
 
 - MvvmCross
-	- Code Sharing
-		- Share as much code as possible across platforms
-		- Model View View Model pattern
-		- Common Model, ViewModel code layer
-		- Simple IoC framework
-		- Plugins 
+	- Mvvm Platform
+		- Plugins via IoC and PCL for code sharing
 
 - Windows Phone 8 SDK
 	- Voice Control
@@ -50,7 +46,9 @@ This project includes:
 	- more coming soon....
 
 Other platforms and features will be added soon....
-	
+
+There are some NUnit unit tests included - I ran out of time a bit - so coverage is not huge. More will be added!
+
 ----------
 
 ###GETTING STARTED###
@@ -75,7 +73,7 @@ In order to get Visual Studio Mono for Android projects to be able to reference 
 
 
 #####Mac Setup:######
-At this time, you should have no problems opening the MonoTouch and Mono for Android projects on the mac.
+At this time, you should have no problems opening the Mono for Android projects on the mac...
 
 If you do have issues, try the following:
 
@@ -88,28 +86,34 @@ If you do have issues, try the following:
 	<CscToolPath>/Developer/MonoTouch/usr/bin</CscToolPath>
 	```
 
+If you have trouble building the PCL projects in MonoDevelop, then we may need to change the PCL profile - while we are waiiting for this fix - https://bugzilla.xamarin.com/show_bug.cgi?id=7173 - the workaround is http://slodge.blogspot.co.uk/2012/10/a-temporary-solution-for-profile1-only.html
+
 ----------
 
 ###LINKS###
 -	Xamarin.Mobile - http://xamarin.com/mobileapi
 -	MvvmCross - https://github.com/slodge/MvvmCross
-
+-   Sphero - http://gosphero.com
 
 ----------
 
 ###THANK YOU'S###
-- Xamarin - Thanks to all the folks at Xamarin who make coding for mobile in C# a dream :)
-- Nokia - for the best phone ever - Lumia 920
 - Sphero - for a totally awesome toy!
-- James Newton-King - for JSON.Net!
+- Nokia - for the best phone ever - Lumia 920
+- Xamarin - Thanks to all the folks at Xamarin who make coding for mobile in C# a dream :)
+- Denmark - for Anders Hejlsberg
+- James Newton-King - for JSON.Net which I use everywhere
+- Paul Foster - for talking about Sphero 
+- Justin Angel - for the amazing WP8 What's New guide
 - the ITR Mobility team - for MonoCross
-- Jonathan Dick (@redth) - Thanks for saying yet to letting me steal this readme format :)
+- Jonathan Dick (@redth) - Thanks for saying yes to letting me steal this readme format :)
 
 ----------
 
 ###IMPORTANT###
-This app talks to your sphero over BlueTooth. 
+This app is in no way endorsed by Sphero - but we love them!
 
-This app is in no way endorsed by Sphero - but we'd love them to say 'Hi'
+This app talks to your Sphero over BlueTooth using some of the publicly available low level APIs. 
 
-It is definitely possible to get carried away and to have too much fun with your balls. Please play nicely.
+It is definitely possible to get carried away and to have too much fun with your balls. *Please play nicely.*
+
