@@ -85,7 +85,7 @@
                 </Grid>
             </phone:PivotItem>
             
-            <phone:PivotItem Header="Accerlerate" DataContext="{Binding AccelMovement}" Tag="Accelerometer">
+            <phone:PivotItem Header="Tilt" DataContext="{Binding AccelMovement}" Tag="Accelerometer">
                 <Grid Margin="0,-40,0,0">
                     <Canvas x:Name="TheAccelParent" Height="400" Width="400">
                         <Image Source="/Assets/Target.png" Opacity="0.7"  ></Image>
