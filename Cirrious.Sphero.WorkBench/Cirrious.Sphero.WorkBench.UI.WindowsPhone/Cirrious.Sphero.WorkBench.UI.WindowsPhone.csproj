@@ -265,6 +265,9 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone">
       <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone">
+      <HintPath>..\..\MvvmCross\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
       <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
     </Reference>

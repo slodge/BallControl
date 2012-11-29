@@ -76,6 +76,9 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.Share.Droid">
       <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Share.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Droid">
+      <HintPath>..\..\MvvmCross\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

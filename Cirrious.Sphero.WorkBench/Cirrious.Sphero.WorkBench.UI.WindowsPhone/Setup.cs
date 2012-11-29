@@ -43,6 +43,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone
             registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Speech.WindowsPhone.Plugin>();
             registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone.Plugin>();
             registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone.Plugin>();
+            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone.Plugin>();
             registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone.Plugin>();
 
             base.AddPluginsLoaders(registry);

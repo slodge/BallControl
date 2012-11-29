@@ -7,6 +7,9 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using Cirrious.MvvmCross.WindowsPhone.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels;
 
@@ -17,6 +20,12 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
         public AboutView()
         {
             InitializeComponent();
+        }
+
+        private void HyperLinkOnTap(object sender, GestureEventArgs e)
+        {
+            var element = sender as TextBlock;
+            ViewModel.GoToUrlCommand.Execute(element.Text);
         }
     }
 
