@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4A1EABC-5E4D-4AE4-8E31-0A851ACFD9D6}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cirrious.Sphero.WorkBench.UI.Droid</RootNamespace>
+    <AssemblyName>Cirrious.Sphero.WorkBench.UI.Droid</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v2.3</TargetFrameworkVersion>
+    <AndroidSupportedAbis>armeabi%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Android">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Binding.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color.Droid">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Color.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.Droid">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.File.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Droid">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Share.Droid">
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Share.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BaseTouchView.cs" />
+    <Compile Include="Controls\MovementTrackingTouchView.cs" />
+    <Compile Include="Controls\TwoTouchView.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
+    <Compile Include="Views\AboutView.cs" />
+    <Compile Include="Views\HomeView.cs" />
+    <Compile Include="Views\SpheroSubViews\SpheroAccelMovementView.cs" />
+    <Compile Include="Views\SpheroSubViews\SpheroColorView.cs" />
+    <Compile Include="Views\SpheroSubViews\SpheroHeadingView.cs" />
+    <Compile Include="Views\SpheroSubViews\SpheroMovementView.cs" />
+    <Compile Include="Views\SpheroView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\Layout\ListItem_AvailableSphero.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Page_HomeView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Page_SpheroView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\ChildPage_SpheroMovementView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\ChildPage_SpheroHeadingView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\ChildPage_SpheroColorView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\ChildPage_SpheroAccelMovementView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Page_AboutView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cirrious.Sphero.WorkBench.Core\Cirrious.Sphero.WorkBench.Core.csproj">
+      <Project>{066482E7-A44C-4911-B983-E3A5E41CFB7C}</Project>
+      <Name>Cirrious.Sphero.WorkBench.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.Droid\Cirrious.MvvmCross.Plugins.Accelerometer.Droid.csproj">
+      <Project>{1ba31472-796c-4407-9183-5f3c29e5b0c4}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Accelerometer.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.csproj">
+      <Project>{b81c8f9a-fe2c-4807-90ba-d34cb25d8ce6}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Accelerometer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
+      <Project>{5400cde5-ad8a-408a-aea7-fddf9bf76aef}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.Droid\Cirrious.MvvmCross.Plugins.Settings.Droid.csproj">
+      <Project>{f98c9e31-75c3-4e33-b916-9439139edda0}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Settings.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.Droid\Cirrious.MvvmCross.Plugins.Speech.Droid.csproj">
+      <Project>{b3d733db-4834-4327-a80e-190116c85fea}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Speech.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.Droid\Cirrious.MvvmCross.Plugins.Sphero.Droid.csproj">
+      <Project>{f6e7685e-7089-4291-b58d-5148e870698e}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Sphero.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.Droid\Cirrious.MvvmCross.Plugins.XamPhotos.Droid.csproj">
+      <Project>{d8b53c82-6d87-423d-9b3a-8b38b2ab6875}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
+      <Project>{ff37be9c-cf12-4994-9e15-1b3c07d7b68b}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Drawable\Tab_Move.xml" />
+    <AndroidResource Include="Resources\Drawable\appbar_turn.png" />
+    <AndroidResource Include="Resources\Drawable\appbar_move.png" />
+    <AndroidResource Include="Resources\Drawable\Tab_Turn.xml" />
+    <AndroidResource Include="Resources\Drawable\redbackground_fill.xml" />
+    <AndroidResource Include="Resources\Drawable\redprogress_fill.xml" />
+    <AndroidResource Include="Resources\Drawable\redprogress.xml" />
+    <AndroidResource Include="Resources\Drawable\greenprogress_fill.xml" />
+    <AndroidResource Include="Resources\Drawable\greenbackground_fill.xml" />
+    <AndroidResource Include="Resources\Drawable\greenprogress.xml" />
+    <AndroidResource Include="Resources\Drawable\bluebackground_fill.xml" />
+    <AndroidResource Include="Resources\Drawable\blueprogress.xml" />
+    <AndroidResource Include="Resources\Drawable\blueprogress_fill.xml" />
+    <AndroidResource Include="Resources\Drawable\appbar_three_axis.png" />
+    <AndroidResource Include="Resources\Drawable\appbar_dropper.png" />
+    <AndroidResource Include="Resources\Drawable\Tab_MoveAccel.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\Tab_Color.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

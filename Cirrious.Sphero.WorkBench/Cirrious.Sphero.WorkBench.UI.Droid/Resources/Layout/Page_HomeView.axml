@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res/Cirrious.Sphero.WorkBench.UI.Droid"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+  <!--
+  <ProgressBar
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
+    local:MvxBind="{'Visibility':{'Path':'IsLoading','Converter':'Visibility'}}"
+      />
+  -->
+  <Mvx.MvxBindableListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        local:MvxItemTemplate="@layout/listitem_availablesphero"
+        local:MvxBind="{'ItemsSource':{'Path':'ListService.AvailableSpheros'},'ItemClick':{'Path':'GoToSpheroCommand'}}"
+      />
+</FrameLayout>

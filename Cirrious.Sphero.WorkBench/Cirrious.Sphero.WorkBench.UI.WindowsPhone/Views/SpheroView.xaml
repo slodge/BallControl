@@ -1,0 +1,129 @@
+﻿<views:BaseSpheroView
+    x:Class="Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views.SpheroView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views"
+    xmlns:nativeResources="clr-namespace:Cirrious.Sphero.WorkBench.UI.WindowsPhone.NativeConverters"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape"  Orientation="Landscape"
+    shell:SystemTray.Opacity="0"
+    shell:SystemTray.IsVisible="True">
+
+    <views:BaseSpheroView.Resources>
+        <nativeResources:NativeSimpleColorConverter x:Key="SimpleColorConverter" />
+        <nativeResources:NativeVisibilityConverter x:Key="VisibilityConverter" />
+        <nativeResources:NativeFlexiInvertedVisibilityConverter x:Key="FlexiInvertedVisibilityConverter" />
+    </views:BaseSpheroView.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <Rectangle>
+            <!--
+            <Rectangle.RenderTransform>
+                <RotateTransform Angle="90" CenterX="240" CenterY="380" />
+            </Rectangle.RenderTransform>
+            -->
+            <Rectangle.Fill>
+                <VideoBrush x:Name="TheVideoBrush"></VideoBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="12" >
+            <Image Source="/Assets/ApplicationIcon.png" Height="12" Width="12"></Image>
+            <TextBlock Text="{Binding ConnectedSphero.Name, FallbackValue='No Sphero Connected'}"></TextBlock>
+        </StackPanel>
+        <phone:Pivot Margin="-12,-24,0,0"  x:Name="ThePivot" SelectionChanged="ThePivot_OnSelectionChanged">
+            <phone:PivotItem Header="Move" DataContext="{Binding Movement}">
+                <Grid Margin="0,-36,0,0">
+                    <Canvas x:Name="TheMoveParent" Height="400" Width="400">
+                        <Image Source="/Assets/Target.png" Opacity="0.7" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonUp="Target_OnMouseLeftButtonUp" MouseLeftButtonDown="Target_OnMouseLeftButtonDown" MouseMove="Target_OnMouseMove" ></Image>
+                        <Image x:Name="TheMoveHighlight" Source="/Assets/TouchPoint200.png" Visibility="Collapsed" IsHitTestVisible="False" ></Image>
+                    </Canvas>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Turn" DataContext="{Binding Heading}">
+                <Grid Margin="0,-36,0,0">
+                    <Canvas x:Name="TheHeadingParent" Height="400" Width="400">
+                        <Image Source="/Assets/steeringwheel400.png" MouseLeftButtonUp="Heading_OnMouseLeftButtonUp" MouseLeftButtonDown="Heading_OnMouseLeftButtonDown" MouseMove="Heading_OnMouseMove" ></Image>
+                        <Image x:Name="TheHeadingHighlight" Source="/Assets/TouchPoint200.png" Visibility="Collapsed" IsHitTestVisible="False" >
+                            
+                        </Image>
+                    </Canvas>
+                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ToggleBackLedCommand}" Content="Tail">
+                    </Button>
+                </Grid>
+            </phone:PivotItem>
+            
+            <phone:PivotItem Header="Color" DataContext="{Binding Color}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock VerticalAlignment="Center" Text="Color:" />
+                    <Rectangle Grid.Row="0" Grid.Column="1" Height="40" Margin="0,12,0,12" HorizontalAlignment="Stretch" Fill="{Binding Color, Converter={StaticResource SimpleColorConverter}}"></Rectangle>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Text="Red" />
+                    <Slider Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="255" Foreground="Red" Value="{Binding Red, Mode=TwoWay}"></Slider>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Text="Green" />
+                    <Slider Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="255" Foreground="Green" Value="{Binding Green, Mode=TwoWay}"></Slider>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Text="Blue" />
+                    <Slider Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="255" Foreground="Blue" Value="{Binding Blue, Mode=TwoWay}"></Slider>
+                </Grid>
+            </phone:PivotItem>
+            
+            <phone:PivotItem Header="Accerlerate" DataContext="{Binding AccelMovement}" Tag="Accelerometer">
+                <Grid Margin="0,-40,0,0">
+                    <Canvas x:Name="TheAccelParent" Height="400" Width="400">
+                        <Image Source="/Assets/Target.png" Opacity="0.7"  ></Image>
+                        <Image x:Name="TheAccelHighlight" Source="/Assets/TouchPoint200.png" Visibility="Visible" IsHitTestVisible="False" ></Image>
+                    </Canvas>
+                </Grid>
+            </phone:PivotItem>
+            
+            <phone:PivotItem Header="Voice" DataContext="{Binding Speech}" Tag="Speech">
+                <Grid Margin="0,-40,0,0">
+                    <ListBox ItemsSource="{Binding HeardSoFar}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding}" Style="{StaticResource PhoneTextTitle2Style}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <Grid Visibility="{Binding Path=ConnectedSphero, Converter={StaticResource FlexiInvertedVisibilityConverter}}" VerticalAlignment="Stretch">
+            <Rectangle Opacity="0.5" Fill="Gray" >
+            </Rectangle>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                <toolkit:PerformanceProgressBar IsIndeterminate="True" HorizontalAlignment="Center" IsEnabled="True" >
+                </toolkit:PerformanceProgressBar>
+                <TextBlock Text="finding your ball..." HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.bluetooth.png" Text="Bluetooth" Click="ApplicationBarIconButton_Bluetooth_OnClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.camera.png" Text="Photo" Click="ApplicationBarIconButton_Photo_OnClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.image.multiple.png" Text="Photos" Click="ApplicationBarIconButton_Photos_OnClick"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</views:BaseSpheroView>
