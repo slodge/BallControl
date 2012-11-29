@@ -118,7 +118,7 @@ If you have trouble building the PCL projects in MonoDevelop, then we may need t
 
 ----------
 
-###THANK YOU'S###
+###THANK YOU###
 - Sphero - for a totally awesome toy!
 - Nokia - for the best phone ever - Lumia 920
 - Xamarin - Thanks to all the folks at Xamarin who make coding for mobile in C# a dream :)
@@ -128,6 +128,7 @@ If you have trouble building the PCL projects in MonoDevelop, then we may need t
 - Paul Foster - for talking about Sphero 
 - Justin Angel - for the amazing WP8 What's New guide
 - the ITR Mobility team - for MonoCross which inspired MvvmCross a year ago
+- ChrisNTR - for MonoMobile.Extensions
 - Jonathan Dick (@redth) - Thanks for saying yes to letting me steal this readme format :)
 
 ----------
