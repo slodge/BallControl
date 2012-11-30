@@ -104,6 +104,15 @@ If you do have issues, try the following:
 
 If you have trouble building the PCL projects in MonoDevelop, then we may need to change the PCL profile - while we are waiiting for this fix - https://bugzilla.xamarin.com/show_bug.cgi?id=7173 - the workaround is http://slodge.blogspot.co.uk/2012/10/a-temporary-solution-for-profile1-only.html
 
+
+#####Windows Store/WinRT:######
+There are WinRT projects here... these are close to working.... but this might not work on version 1 of Windows Store :(
+
+- http://stackoverflow.com/questions/10089064/bluetooth-spp-device-on-windows-8
+- http://social.msdn.microsoft.com/Forums/en-US/wdk/thread/b2924065-1627-400d-9b81-6990c53e1652/
+- etc :( :(
+
+
 ----------
 
 ###LINKS###
@@ -134,6 +143,20 @@ If you have trouble building the PCL projects in MonoDevelop, then we may need t
 ----------
 
 ###IMPORTANT###
+
+I've done a **lot** of work and I am publishing the apps here to the various app stores and marketplaces.
+
+You are welcome to use this project as the basis for your work - I really look forward to seeing the apps and games you make - Sphero is lovely and you guys are awesome!
+
+However:
+
+- please do not just copy these apps and blindly publish them to compete with mine.
+- please consider mentioning me - @slodge - and my company - http://cirrious.com/ - in your app. Thanks :)
+- please do let me know about your app - would love to keep a list!
+
+----------
+
+###ALSO IMPORTANT###
 This app is in no way endorsed by Sphero - but we love them!
 
 This app talks to your Sphero over BlueTooth using some of the publicly available low level APIs. 
