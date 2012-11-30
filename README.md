@@ -32,7 +32,7 @@ More will follow - especially if you join this project and help make it even mor
  
 ![Ball Control Banner](https://raw.github.com/slodge/BallControl/master/wide.png)
 
-#[Watch an intro video about the project!](http://www.youtube.com/watch?v=TODO&feature=youtube_gdata "Watch an Intro Video about the Project!")#
+#[Watch an intro video about the project!](http://www.youtube.com/embed/4PXp_bmRwhA "Watch an Intro Video about the Project!")#
 
 ----------
 
