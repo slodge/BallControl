@@ -34,6 +34,11 @@ More will follow - especially if you join this project and help make it even mor
 
 #[Watch an intro video about the project!](http://www.youtube.com/embed/4PXp_bmRwhA "Watch an Intro Video about the Project!")#
 
+Or:
+
+#[Watch the apps first public appearance!](http://www.youtube.com/embed/yMS4AAko1jI "Watch the apps first public appearance!")#
+
+
 ----------
 
 

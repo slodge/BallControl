@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{e1197bba-8c61-4ba7-bcb2-b284bc97e184}" Title="Ball Control" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Stuart Lodge" Description="Sphero Robot Controller" Publisher="Cirrious" PublisherID="{0151e0f7-6ffb-4ad9-9551-b080d533a525}">
+  <App xmlns="" ProductID="{e1197bba-8c61-4ba7-bcb2-b284bc97e184}" Title="Ball Control" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Stuart Lodge" Description="Sphero Robot Controller by http://cirrious.com" Publisher="Cirrious" PublisherID="{0151e0f7-6ffb-4ad9-9551-b080d533a525}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -24,7 +24,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Cirrious.Sphero.WorkBench.UI.WindowsPhone</Title>
+          <Title>Ball Control</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
