@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Cirrious.MvvmCross.Plugins.Sphero.Helpers;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.MvvmCross.Plugins.Sphero.Messages;
+using Windows.System.Threading;
 
 // ReSharper disable CheckNamespace
 
@@ -43,8 +44,8 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.HackFileShare
 
         public void Start()
         {
-            ThreadPool.QueueUserWorkItem(ignored => ReceiveResponses());
-            ThreadPool.QueueUserWorkItem(ignored => SendCommmands());
+            Windows.System.Threading.ThreadPool.RunAsync(ignored => ReceiveResponses());
+            Windows.System.Threading.ThreadPool.RunAsync(ignored => SendCommmands());
         }
 
         public void SendAndReceive(ISpheroCommand command, Action<ISpheroMessage> onSuccess, Action<Exception> onError)
@@ -119,7 +120,7 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.HackFileShare
             }
         }
 
-        private async Task ReceiveResponses()
+        protected async Task ReceiveResponses()
         {
             try
             {
@@ -143,7 +144,7 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.HackFileShare
             }
         }
 
-        private async Task SendCommmands()
+        protected async Task SendCommmands()
         {
             try
             {

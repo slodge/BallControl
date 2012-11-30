@@ -87,7 +87,7 @@
     <Compile Include="HackFileShare\IStreamSocketWrapper.cs" />
     <Compile Include="Tooth\AvailableSphero.cs" />
     <Compile Include="Tooth\BaseSphero.cs" />
-    <Compile Include="Helpers\BufferExtensionMethods.cs" />
+    <Compile Include="HackFileShare\BufferExtensionMethods.cs" />
     <Compile Include="Tooth\ConnectedSphero.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="HackFileShare\AwaitingConnectedSpheroRunner.cs" />

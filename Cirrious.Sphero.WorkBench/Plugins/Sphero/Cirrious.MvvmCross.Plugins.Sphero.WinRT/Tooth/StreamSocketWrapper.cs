@@ -13,7 +13,7 @@ using Cirrious.MvvmCross.Plugins.Sphero.HackFileShare;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 
-namespace Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone.Tooth
+namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
 {
     public class StreamSocketWrapper : IStreamSocketWrapper, IDisposable
     {
