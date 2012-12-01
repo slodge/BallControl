@@ -22,7 +22,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         private readonly ISpheroSpeedService _speedService;
 
-        protected ISpheroSpeedService SpeedService
+        public ISpheroSpeedService SpeedService
         {
             get { return _speedService; }
         }

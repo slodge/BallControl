@@ -8,6 +8,7 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
+using System.Windows;
 using Cirrious.MvvmCross.WindowsPhone.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels;
 
@@ -21,6 +22,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             InitializeComponent();
         }
 
+        private bool _hackVisibleConnected;
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -28,6 +30,21 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             {
                 TheListBox.SelectedIndex = -1;
             }
+
+            /// HACK HACK - this should be bound and should use NotifyCollectionChanged to
+            if (_hackVisibleConnected)
+                return;
+
+            HackVisibleHelp();
+            ViewModel.ListService.PropertyChanged += (sender, args) => HackVisibleHelp();
+            _hackVisibleConnected = true;
+        }
+
+        private void HackVisibleHelp()
+        {
+            var visible = (ViewModel.ListService.AvailableSpheros == null
+                           || ViewModel.ListService.AvailableSpheros.Count == 0);
+            NoSpheroText.Visibility = visible ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void ApplicationBarMenuItem_About_OnClick(object sender, EventArgs e)

@@ -21,7 +21,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         public ICommand RollCommand
         {
-            get { return new MvxRelayCommand<RelativePositionParameters>(DoRoll); }
+            get { return new MvxRelayCommand<CartesianPositionParameters>(DoRoll); }
         }
 
 

@@ -31,6 +31,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel x:Name="NoSpheroText" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="48" >
+                <TextBlock Text="No Spheros found" Margin="12"></TextBlock>
+                <TextBlock Text="Please use Bluetooth and Refresh below to try to find and connect to your sphere." Margin="12" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="WindowsPhone and Sphero love each other, but sometimes you need to try connecting twice." Margin="12" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
             <ListBox x:Name="TheListBox" ItemsSource="{Binding ListService.AvailableSpheros}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -46,7 +51,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image Source="/Assets/ApplicationIcon.png" Height="100" Width="100"></Image>
-                            <TextBlock Grid.Column="1" Text="{Binding Name}" Style="{StaticResource PhoneTextTitle2Style}"></TextBlock>
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" Style="{StaticResource PhoneTextTitle2Style}" VerticalAlignment="Center"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -58,7 +63,9 @@
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.bluetooth.png" Text="Bluetooth" Click="ApplicationBarIconButton_Bluetooth_OnClick"/>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.refresh.png" Text="Refresh" Click="ApplicationBarIconButton_Refresh_OnClick"/>
+            <!--
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.image.multiple.png" Text="Photos" Click="ApplicationBarIconButton_Photos_OnClick"/>
+            -->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="About" Click="ApplicationBarMenuItem_About_OnClick"/>
             </shell:ApplicationBar.MenuItems>

@@ -15,34 +15,11 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 {
     public class SpheroHeadingViewModel : BaseSpheroChildViewModel
     {
-        private bool _bacKLedOn;
         private int _currentHeading;
 
         public SpheroHeadingViewModel(ISpheroParentViewModel parent)
             : base(parent)
         {
-        }
-
-        public bool BackLedOn
-        {
-            get { return _bacKLedOn; }
-            set
-            {
-                _bacKLedOn = value;
-                RaisePropertyChanged(() => BackLedOn);
-            }
-        }
-
-        public ICommand ToggleBackLedCommand
-        {
-            get { return new MvxRelayCommand(DoToggleBackLed); }
-        }
-
-        private void DoToggleBackLed()
-        {
-            BackLedOn = !BackLedOn;
-            var command = new BackLedCommand(BackLedOn ? 255 : 0);
-            SendCommand(command);
         }
 
         public ICommand SetHeadingCommand

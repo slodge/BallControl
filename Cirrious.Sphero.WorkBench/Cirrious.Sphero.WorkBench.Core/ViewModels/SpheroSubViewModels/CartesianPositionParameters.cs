@@ -1,4 +1,4 @@
-﻿// <copyright file="RelativePositionParameters.cs" company="Cirrious">
+﻿// <copyright file="CartesianPositionParameters.cs" company="Cirrious">
 // (c) Copyright Cirrious. http://www.cirrious.com
 // This source is subject to the Microsoft Public License (Ms-PL)
 // Please see license.txt on http://opensource.org/licenses/ms-pl.html
@@ -11,7 +11,7 @@ using System;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 {
-    public class RelativePositionParameters
+    public class CartesianPositionParameters
     {
         public double X { get; set; }
         public double Y { get; set; }
@@ -21,7 +21,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
             return X == 0.0 && Y == 0.0;
         }
 
-        public double SimpleDistanceFrom(RelativePositionParameters other)
+        public double SimpleDistanceFrom(CartesianPositionParameters other)
         {
             return Math.Abs(other.X - this.X) + Math.Abs(other.Y - this.Y);
         }
@@ -45,7 +45,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
         {
             get
             {
-                var distance = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2));
+                var distance = RawCartesianDistance();
                 if (distance > 1.0)
                     distance = 1.0;
 
@@ -53,6 +53,22 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
                 return speed;
             }
+        }
+
+        public void ScaleToFullDistance()
+        {
+            var distance = RawCartesianDistance();
+            if (distance == 0.0)
+                return;
+
+            var scale = 1.0/distance;
+            X *= scale;
+            Y *= scale;
+        }
+
+        private double RawCartesianDistance()
+        {
+            return Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2));
         }
     }
 }

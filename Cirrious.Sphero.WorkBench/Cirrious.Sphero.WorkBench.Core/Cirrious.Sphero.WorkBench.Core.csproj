@@ -50,13 +50,13 @@
     <Compile Include="ViewModels\SpheroSubViewModels\BaseSpheroMovementViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\ISpheroChildViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\ISpheroParentViewModel.cs" />
-    <Compile Include="ViewModels\SpheroSubViewModels\RelativePositionParameters.cs" />
+    <Compile Include="ViewModels\SpheroSubViewModels\CartesianPositionParameters.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\SpeechActionAttribute.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\SpheroAccelMovementViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\SpheroColorViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\SpheroHeadingViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\SpheroMovementViewModel.cs" />
-    <Compile Include="ViewModels\SpheroSubViewModels\SpheroSensitivityViewModel.cs" />
+    <Compile Include="ViewModels\SpheroSubViewModels\SpheroSetupViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\SpheroSpeechViewModel.cs" />
     <Compile Include="ViewModels\SpheroViewModel.cs" />
   </ItemGroup>

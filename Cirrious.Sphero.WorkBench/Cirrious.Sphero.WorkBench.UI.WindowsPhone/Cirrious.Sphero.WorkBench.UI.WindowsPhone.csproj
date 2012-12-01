@@ -93,6 +93,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Joystick.xaml.cs">
+      <DependentUpon>Joystick.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="NativeConverters\NativeFlexiInvertedVisibilityConverter.cs" />
     <Compile Include="NativeConverters\NativeSimpleColorConverter.cs" />
@@ -123,6 +126,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Controls\Joystick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ThemeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\AboutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,8 +163,13 @@
     <Content Include="Assets\AppBar\appbar.bluetooth.png" />
     <Content Include="Assets\AppBar\appbar.image.multiple.png" />
     <Content Include="Assets\AppBar\appbar.camera.png" />
+    <Content Include="Assets\AppBar\appbar.rabbit.png" />
+    <Content Include="Assets\AppBar\appbar.rabbit.white.png" />
     <Content Include="Assets\AppBar\appbar.refresh.png" />
+    <Content Include="Assets\AppBar\appbar.snail.png" />
+    <Content Include="Assets\AppBar\appbar.snail.white.png" />
     <Content Include="Assets\AppBar\appbar.video.png" />
+    <AndroidAsset Include="Assets\AppBar\appbar.video.stop.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -177,6 +193,7 @@
     </Content>
     <Content Include="Assets\TouchPoint100.png" />
     <Content Include="Assets\TouchPoint200.png" />
+    <Content Include="Controls\ReadMe.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

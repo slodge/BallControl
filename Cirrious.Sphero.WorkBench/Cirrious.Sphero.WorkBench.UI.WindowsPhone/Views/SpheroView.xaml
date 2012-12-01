@@ -9,11 +9,12 @@
     xmlns:views="clr-namespace:Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views"
     xmlns:nativeResources="clr-namespace:Cirrious.Sphero.WorkBench.UI.WindowsPhone.NativeConverters"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Cirrious.Sphero.WorkBench.UI.WindowsPhone.Controls"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Landscape"  Orientation="Landscape"
+    SupportedOrientations="Landscape"  Orientation="LandscapeLeft"
     shell:SystemTray.Opacity="0"
     shell:SystemTray.IsVisible="True">
 
@@ -39,13 +40,16 @@
             <Image Source="/Assets/ApplicationIcon.png" Height="12" Width="12"></Image>
             <TextBlock Text="{Binding ConnectedSphero.Name, FallbackValue='No Sphero Connected'}"></TextBlock>
         </StackPanel>
-        <phone:Pivot Margin="-12,-24,0,0"  x:Name="ThePivot" SelectionChanged="ThePivot_OnSelectionChanged">
-            <phone:PivotItem Header="Move" DataContext="{Binding Movement}">
+        <phone:Pivot Margin="-12,-24,0,0" Foreground="{StaticResource PhoneAccentBrush}"  x:Name="ThePivot" SelectionChanged="ThePivot_OnSelectionChanged"  >
+            <phone:PivotItem Header="Move" DataContext="{Binding Movement}" Tag="Move">
                 <Grid Margin="0,-36,0,0">
+                <controls:Joystick x:Name="TheMoveJoystick" Height="400" Width="400"></controls:Joystick>
+                    <!--
                     <Canvas x:Name="TheMoveParent" Height="400" Width="400">
                         <Image Source="/Assets/Target.png" Opacity="0.7" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonUp="Target_OnMouseLeftButtonUp" MouseLeftButtonDown="Target_OnMouseLeftButtonDown" MouseMove="Target_OnMouseMove" ></Image>
                         <Image x:Name="TheMoveHighlight" Source="/Assets/TouchPoint200.png" Visibility="Collapsed" IsHitTestVisible="False" ></Image>
                     </Canvas>
+                    -->
                 </Grid>
             </phone:PivotItem>
 
@@ -53,35 +57,40 @@
                 <Grid Margin="0,-36,0,0">
                     <Canvas x:Name="TheHeadingParent" Height="400" Width="400">
                         <Image Source="/Assets/steeringwheel400.png" MouseLeftButtonUp="Heading_OnMouseLeftButtonUp" MouseLeftButtonDown="Heading_OnMouseLeftButtonDown" MouseMove="Heading_OnMouseMove" ></Image>
+
+                        <Grid x:Name="TheHeadingHighlight" Visibility="Collapsed" IsHitTestVisible="False" Width="100" Height="100" >
+                            <Ellipse Fill="#FFE55858" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" />
+                            <Ellipse Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Width="84" Margin="4,-4,4,16" >
+                                <Ellipse.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Offset="0" Color="#7FFFFFFF"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+
+                        <!--
                         <Image x:Name="TheHeadingHighlight" Source="/Assets/TouchPoint200.png" Visibility="Collapsed" IsHitTestVisible="False" >
-                            
                         </Image>
+                        -->
                     </Canvas>
-                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ToggleBackLedCommand}" Content="Tail">
-                    </Button>
                 </Grid>
             </phone:PivotItem>
             
             <phone:PivotItem Header="Color" DataContext="{Binding Color}">
-                <Grid>
+                <Grid VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock VerticalAlignment="Center" Text="Color:" />
-                    <Rectangle Grid.Row="0" Grid.Column="1" Height="40" Margin="0,12,0,12" HorizontalAlignment="Stretch" Fill="{Binding Color, Converter={StaticResource SimpleColorConverter}}"></Rectangle>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Text="Red" />
-                    <Slider Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="255" Foreground="Red" Value="{Binding Red, Mode=TwoWay}"></Slider>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Text="Green" />
-                    <Slider Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="255" Foreground="Green" Value="{Binding Green, Mode=TwoWay}"></Slider>
-                    <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Text="Blue" />
-                    <Slider Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="255" Foreground="Blue" Value="{Binding Blue, Mode=TwoWay}"></Slider>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1">
+                        <Rectangle RadiusX="10" RadiusY="10" Height="40" Margin="12" HorizontalAlignment="Stretch" Fill="{Binding Color, Converter={StaticResource SimpleColorConverter}}"></Rectangle>
+                        <Slider Minimum="0" Maximum="255" Foreground="Red" Value="{Binding Red, Mode=TwoWay}"></Slider>
+                        <Slider Minimum="0" Maximum="255" Foreground="Green" Value="{Binding Green, Mode=TwoWay}"></Slider>
+                        <Slider Minimum="0" Maximum="255" Foreground="Blue" Value="{Binding Blue, Mode=TwoWay}"></Slider>
+                    </StackPanel>
                 </Grid>
             </phone:PivotItem>
             
@@ -89,41 +98,78 @@
                 <Grid Margin="0,-40,0,0">
                     <Canvas x:Name="TheAccelParent" Height="400" Width="400">
                         <Image Source="/Assets/Target.png" Opacity="0.7"  ></Image>
-                        <Image x:Name="TheAccelHighlight" Source="/Assets/TouchPoint200.png" Visibility="Visible" IsHitTestVisible="False" ></Image>
+                        <Grid x:Name="TheAccelHighlight" IsHitTestVisible="False" Width="100" Height="100" >
+                            <Ellipse Fill="#FFE55858" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" />
+                            <Ellipse Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Width="84" Margin="4,-4,4,16" >
+                                <Ellipse.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Offset="0" Color="#7FFFFFFF"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
                     </Canvas>
                 </Grid>
             </phone:PivotItem>
             
             <phone:PivotItem Header="Voice" DataContext="{Binding Speech}" Tag="Speech">
                 <Grid Margin="0,-40,0,0">
-                    <ListBox ItemsSource="{Binding HeardSoFar}">
+                    <ListBox ItemsSource="{Binding HeardSoFar}" HorizontalAlignment="Right">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding}" Style="{StaticResource PhoneTextTitle2Style}"></TextBlock>
+                                <Grid HorizontalAlignment="Right">
+                                    <TextBlock HorizontalAlignment="Right" Text="{Binding}" Style="{StaticResource PhoneTextTitle2Style}"></TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
             </phone:PivotItem>
+            
+            <phone:PivotItem Header="Options" DataContext="{Binding Setup}" Tag="Options">
+                <Grid>
+                    <Grid Height="240" Width="400">
+                        <Rectangle Fill="{StaticResource PhoneBackgroundBrush}" Opacity="0.5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ></Rectangle>
+                        <StackPanel>
+                            <toolkit:ToggleSwitch Content="Tail Light On/Off" IsChecked="{Binding BackLedOn, Mode=TwoWay}" ></toolkit:ToggleSwitch>
+                            <Slider Minimum="0" Maximum="100" Value="{Binding SpeedService.SpeedPercent, Mode=TwoWay}" ></Slider>
+                            <Grid HorizontalAlignment="Stretch" Margin="12,-36,12,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Height="48" Width="48" VerticalAlignment="Center" Source="/Assets/AppBar/appbar.snail.white.png"></Image>
+                                <Image Grid.Row="0" Grid.Column="2" Height="48" Width="48" VerticalAlignment="Center" Source="/Assets/AppBar/appbar.rabbit.white.png"></Image>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </phone:PivotItem>
         </phone:Pivot>
-        <Grid Visibility="{Binding Path=ConnectedSphero, Converter={StaticResource FlexiInvertedVisibilityConverter}}" VerticalAlignment="Stretch">
-            <Rectangle Opacity="0.5" Fill="Gray" >
+        <Grid Visibility="{Binding Path=ConnectedSphero, Converter={StaticResource FlexiInvertedVisibilityConverter}}" VerticalAlignment="Stretch"
+              >
+            <Rectangle Opacity="0.5" Fill="{StaticResource PhoneBackgroundBrush}" IsHitTestVisible="True">
             </Rectangle>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
-                <toolkit:PerformanceProgressBar IsIndeterminate="True" HorizontalAlignment="Center" IsEnabled="True" >
-                </toolkit:PerformanceProgressBar>
-                <TextBlock Text="finding your ball..." HorizontalAlignment="Center"></TextBlock>
+                <toolkit:PerformanceProgressBar IsIndeterminate="True" ActualIsIndeterminate="True" Visibility="Visible" IsEnabled="True" Height="12" Width="400"></toolkit:PerformanceProgressBar>
+                <TextBlock Text="trying to talk to Sphero..." HorizontalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
             </StackPanel>
         </Grid>
+        <StackPanel x:Name="RecordingPanel"  Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Red">
+            <TextBlock TextAlignment="Center" Text="Recording" Margin="12" Foreground="White" FontWeight="Bold"></TextBlock>
+        </StackPanel>
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.bluetooth.png" Text="Bluetooth" Click="ApplicationBarIconButton_Bluetooth_OnClick"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.camera.png" Text="Photo" Click="ApplicationBarIconButton_Photo_OnClick"/>
+            <!--
+            Hidden because WP8 requires me to put a server in place :/
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.video.png" Text="Video" Click="ApplicationBarIconButton_Video_OnClick"/>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/appbar.image.multiple.png" Text="Photos" Click="ApplicationBarIconButton_Photos_OnClick"/>
+            -->
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </views:BaseSpheroView>

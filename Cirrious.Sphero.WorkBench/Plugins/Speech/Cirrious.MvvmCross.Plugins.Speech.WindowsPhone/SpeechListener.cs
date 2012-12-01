@@ -20,10 +20,15 @@ namespace Cirrious.MvvmCross.Plugins.Speech.WindowsPhone
     public class SpeechListener : ISpeechListener
     {
         private bool _pleaseFinish;
+        private bool _isRunning;
         private IList<string> _words;
 
         public void Start(IList<string> words)
         {
+            if (_isRunning)
+                return;
+
+            _isRunning = true;
             _pleaseFinish = false;
             _words = words;
             ThreadPool.QueueUserWorkItem(ignored => StartRecognizeAsync());
@@ -31,23 +36,31 @@ namespace Cirrious.MvvmCross.Plugins.Speech.WindowsPhone
 
         private async Task StartRecognizeAsync()
         {
-            var speechRecognizer = new SpeechRecognizer();
-            speechRecognizer.Grammars.AddGrammarFromList(
-                "answer",
-                _words);
-
-            while (!_pleaseFinish)
+            try
             {
-                var result = await speechRecognizer.RecognizeAsync();
+                var speechRecognizer = new SpeechRecognizer();
+                speechRecognizer.Grammars.AddGrammarFromList(
+                    "answer",
+                    _words);
 
-                if (result.TextConfidence != SpeechRecognitionConfidence.Rejected)
+                while (!_pleaseFinish)
                 {
-                    ProcessResult(result);
+                    var result = await speechRecognizer.RecognizeAsync();
+
+                    if (result.TextConfidence != SpeechRecognitionConfidence.Rejected)
+                    {
+                        ProcessResult(result);
+                    }
+                    else
+                    {
+                        Debug.WriteLine("No text!");
+                    }
                 }
-                else
-                {
-                    Debug.WriteLine("No text!");
-                }
+
+            }
+            finally
+            {
+                _isRunning = false;
             }
         }
 

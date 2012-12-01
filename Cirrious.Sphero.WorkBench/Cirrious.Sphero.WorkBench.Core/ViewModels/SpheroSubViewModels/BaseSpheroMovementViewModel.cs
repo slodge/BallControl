@@ -15,14 +15,14 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
     {
         private const double DistanceThreshold = 0.05;
 
-        private RelativePositionParameters _position;
+        private CartesianPositionParameters _position;
 
         protected BaseSpheroMovementViewModel(ISpheroParentViewModel parent) : base(parent)
         {
-            Position = new RelativePositionParameters();
+            Position = new CartesianPositionParameters();
         }
 
-        public RelativePositionParameters Position
+        public CartesianPositionParameters Position
         {
             get { return _position; }
             set
@@ -32,26 +32,27 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
             }
         }
 
-        protected void DoRoll(RelativePositionParameters relativePositionParameters)
+        protected void DoRoll(CartesianPositionParameters positionParameters)
         {
-            if (Position.SimpleDistanceFrom(relativePositionParameters) < DistanceThreshold)
-            {
-                return;
-            }
+            // TODO - put the check back in for 'too close'
+            //if (Position.AbsoluteDistance < DistanceThreshold)
+            //{
+            //    return;
+            //}
 
-            Position = relativePositionParameters;
+            Position = positionParameters;
 
-            int headingDegrees = relativePositionParameters.HeadingDegrees;
-            var speed = (int) ((SpeedService.SpeedPercent*relativePositionParameters.AbsoluteDistance)/100.0);
+            int headingDegrees = positionParameters.HeadingDegrees;
+            var speed = (int) ((SpeedService.SpeedPercent*positionParameters.AbsoluteDistance)/100.0);
 
-            //SpheroTrace.Trace("Rolling to {0} with speed {1} - from params ({2:0.000},{3:0.000})", headingDegrees, speed, relativePositionParameters.X, relativePositionParameters.Y);
+            SpheroTrace.Trace("Rolling to {0} with speed {1})", headingDegrees, speed);
             var rollCommand = new RollCommand(speed, headingDegrees, false);
             SendCommand(rollCommand);
         }
 
         protected void DoStopRoll()
         {
-            DoRoll(new RelativePositionParameters());
+            DoRoll(new CartesianPositionParameters());
         }
     }
 }

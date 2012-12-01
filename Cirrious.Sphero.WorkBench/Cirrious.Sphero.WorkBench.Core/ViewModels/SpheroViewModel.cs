@@ -35,7 +35,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         public SpheroHeadingViewModel Heading { get; private set; }
 
-        public SpheroSensitivityViewModel Sensitivity { get; private set; }
+        public SpheroSetupViewModel Setup { get; private set; }
 
         public SpheroSpeechViewModel Speech { get; private set; }
 
@@ -58,7 +58,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
             AccelMovement = new SpheroAccelMovementViewModel(this);
             Color = new SpheroColorViewModel(this);
             Heading = new SpheroHeadingViewModel(this);
-            Sensitivity = new SpheroSensitivityViewModel(this);
+            Setup = new SpheroSetupViewModel(this);
             Speech = new SpheroSpeechViewModel(this);
 
             _childViewModels = new List<ISpheroChildViewModel>
@@ -67,7 +67,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
                     Color,
                     Heading,
                     AccelMovement,
-                    Sensitivity,
+                    Setup,
                     Speech
                 };
 

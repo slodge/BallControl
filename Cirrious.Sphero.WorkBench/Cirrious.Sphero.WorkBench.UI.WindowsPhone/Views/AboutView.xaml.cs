@@ -27,6 +27,11 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             var element = sender as TextBlock;
             ViewModel.GoToUrlCommand.Execute(element.Text);
         }
+
+        private void BluetoothOnTap(object sender, GestureEventArgs e)
+        {
+            ViewModel.GoToBluetoothCommand.Execute(null);
+        }
     }
 
     public class BaseAboutView : MvxPhonePage<AboutViewModel>

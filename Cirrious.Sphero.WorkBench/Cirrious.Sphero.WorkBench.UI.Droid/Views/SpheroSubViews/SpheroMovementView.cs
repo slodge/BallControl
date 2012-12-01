@@ -22,7 +22,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid.Views.SpheroSubViews
             SetContentView(Resource.Layout.ChildPage_SpheroMovementView);
 
             var touch = this.FindViewById<MovementTrackingTouchView>(Resource.Id.TouchView);
-            touch.TouchEnd += (sender, args) => ViewModel.RollCommand.Execute(new RelativePositionParameters());
+            touch.TouchEnd += (sender, args) => ViewModel.RollCommand.Execute(new CartesianPositionParameters());
             touch.TouchPositionChanged += (sender, args) => ViewModel.RollCommand.Execute(touch.TouchPosition);
         }
     }

@@ -54,9 +54,13 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
         private void AccelerometerOnReadingAvailable(object sender, MvxValueEventArgs<Reading> mvxValueEventArgs)
         {
             // note that the switchover between Y and X here is deliberate!
-            var parameters = new RelativePositionParameters
+            // and that we invert Y
+            // this may need tweaking platform-by-platform 
+            // and phone by phone - and maybe at runtime too!
+
+            var parameters = new CartesianPositionParameters
                 {
-                    X = MakeSafe(mvxValueEventArgs.Value.Y),
+                    X = MakeSafe(-mvxValueEventArgs.Value.Y),
                     Y = MakeSafe(mvxValueEventArgs.Value.X),
                 };
 

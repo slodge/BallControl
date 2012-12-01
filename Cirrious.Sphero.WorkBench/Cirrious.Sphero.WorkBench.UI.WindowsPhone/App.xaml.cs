@@ -8,9 +8,11 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
+using System.Collections;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.ServiceProvider;
@@ -41,6 +43,9 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone
 
             // Standard XAML initialization
             InitializeComponent();
+
+            // option to merge colors
+            //  MergeCustomColors();
 
             // Phone-specific initialization
             InitializePhoneApplication();
@@ -244,6 +249,26 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone
                 }
 
                 throw;
+            }
+        }
+
+        private void MergeCustomColors()
+        {
+            var dictionaries = new ResourceDictionary();
+            string source = String.Format("/Cirrious.Sphero.WorkBench.UI.WindowsPhone;component/Style/ThemeResources.xaml");
+            var themeStyles = new ResourceDictionary { Source = new Uri(source, UriKind.Relative) };
+            dictionaries.MergedDictionaries.Add(themeStyles);
+
+
+            ResourceDictionary appResources = App.Current.Resources;
+            foreach (DictionaryEntry entry in dictionaries.MergedDictionaries[0])
+            {
+                SolidColorBrush colorBrush = entry.Value as SolidColorBrush;
+                SolidColorBrush existingBrush = appResources[entry.Key] as SolidColorBrush;
+                if (existingBrush != null && colorBrush != null)
+                {
+                    existingBrush.Color = colorBrush.Color;
+                }
             }
         }
     }

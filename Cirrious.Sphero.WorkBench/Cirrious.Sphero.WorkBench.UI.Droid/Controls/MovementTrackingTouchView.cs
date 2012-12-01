@@ -100,7 +100,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid.Controls
                 relativeY = -1.0f;
 
             // note that we rotate x and y here because we want 0 to be up the screen
-            TouchPosition = new RelativePositionParameters {Y = relativeX, X = -relativeY};
+            TouchPosition = new CartesianPositionParameters {Y = relativeX, X = -relativeY};
             Fire(TouchPositionChanged);
         }
 
@@ -112,7 +112,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid.Controls
             handler(this, EventArgs.Empty);
         }
 
-        public RelativePositionParameters TouchPosition { get; set; }
+        public CartesianPositionParameters TouchPosition { get; set; }
 
         public event EventHandler TouchStart;
 
