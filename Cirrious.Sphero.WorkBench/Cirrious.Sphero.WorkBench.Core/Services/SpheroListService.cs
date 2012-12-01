@@ -72,7 +72,7 @@ namespace Cirrious.Sphero.WorkBench.Core.Services
             private set
             {
                 _availableSpheros = value;
-                RaisePropertyChanged(() => IsRefreshing);
+                RaisePropertyChanged(() => AvailableSpheros);
             }
         }
     }
