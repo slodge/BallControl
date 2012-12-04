@@ -20,7 +20,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
     {
         public BaseViewModel()
         {
-            this.ViewUnRegistered += OnViewUnRegistered;
+			this.ViewUnRegistered += OnViewUnRegistered;
         }
 
         private void OnViewUnRegistered(object sender, EventArgs eventArgs)

@@ -11,11 +11,13 @@
     <AssemblyName>Cirrious.Sphero.WorkBench.Core.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -23,7 +25,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -65,16 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cirrious.Sphero.WorkBench.Core\Cirrious.Sphero.WorkBench.Core.csproj">
-      <Project>{066482e7-a44c-4911-b983-e3a5e41cfb7c}</Project>
+      <Project>{066482E7-A44C-4911-B983-E3A5E41CFB7C}</Project>
       <Name>Cirrious.Sphero.WorkBench.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
       <Project>{5400CDE5-AD8A-408A-AEA7-FDDF9BF76AEF}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone\Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone.csproj">
-      <Project>{f6cffc44-747e-4657-9d1d-ed0d70a95e02}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
