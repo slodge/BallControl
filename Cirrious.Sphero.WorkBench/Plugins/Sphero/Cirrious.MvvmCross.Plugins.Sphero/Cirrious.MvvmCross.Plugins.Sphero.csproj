@@ -11,14 +11,17 @@
     <RootNamespace>Cirrious.MvvmCross.Plugins.Sphero</RootNamespace>
     <AssemblyName>Cirrious.MvvmCross.Plugins.Sphero</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile2</TargetFrameworkProfile>
+    <TargetFrameworkProfile Condition="'$(OS)' != 'Windows_NT'">Profile1</TargetFrameworkProfile>
+    <TargetFrameworkProfile Condition="'$(OS)' == 'Windows_NT'">Profile104</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -26,7 +29,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -58,14 +61,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpheroPluginException.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
-      <HintPath>..\..\..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -74,4 +69,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
+      <HintPath>..\..\..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\..\..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
