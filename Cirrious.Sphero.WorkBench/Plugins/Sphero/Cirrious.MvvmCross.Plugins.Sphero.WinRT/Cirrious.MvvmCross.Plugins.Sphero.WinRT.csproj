@@ -99,6 +99,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\WinRTWorkaround\Cirrious.Sphero.WorkBench.WinRTHackService\ISpheroBluetoothWcfService.cs">
+      <Link>ISpheroBluetoothWcfService.cs</Link>
+    </Compile>
     <Compile Include="..\Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone\HackFileShare\AwaitingConnectedSpheroRunner.cs">
       <Link>HackFileShare\AwaitingConnectedSpheroRunner.cs</Link>
     </Compile>
@@ -113,6 +116,14 @@
     <Compile Include="Tooth\AvailableSphero.cs" />
     <Compile Include="Tooth\BaseSphero.cs" />
     <Compile Include="Tooth\ConnectedSphero.cs" />
+    <Compile Include="Tooth\HackSingleton.cs" />
+    <Content Include="Tooth\Saved\AvailableSphero.cs" />
+    <Content Include="Tooth\Saved\BaseSphero.cs" />
+    <Content Include="Tooth\Saved\ConnectedSphero.cs" />
+    <Content Include="Tooth\Saved\HackSingleton.cs" />
+    <Content Include="Tooth\Saved\ReadMe.txt" />
+    <Content Include="Tooth\Saved\SpheroFinder.cs" />
+    <Content Include="Tooth\Saved\StreamSocketWrapper.cs" />
     <Compile Include="Tooth\SpheroFinder.cs" />
     <Compile Include="Tooth\StreamSocketWrapper.cs" />
   </ItemGroup>

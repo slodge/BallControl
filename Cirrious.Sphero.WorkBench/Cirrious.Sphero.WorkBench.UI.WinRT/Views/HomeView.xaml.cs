@@ -28,6 +28,29 @@ namespace Cirrious.Sphero.WorkBench.UI.WinRT.Views
             this.InitializeComponent();
         }
 
-        public HomeViewModel ViewModel { get; set; }
+        public new HomeViewModel ViewModel
+        { 
+            get { return base.ViewModel as HomeViewModel; }
+            set { base.ViewModel = value; }
+        }
+
+        private void ItemListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            OnSelectionChangedCommon(e);
+        }
+
+        private void ItemGridView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            OnSelectionChangedCommon(e);
+        }
+
+        private void OnSelectionChangedCommon(SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems == null || e.AddedItems.Count != 1)
+                return;
+
+            var toAdd = e.AddedItems.First();
+            ViewModel.GoToSpheroCommand.Execute(toAdd);
+        }
     }
 }

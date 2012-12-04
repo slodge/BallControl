@@ -1,6 +1,6 @@
 ﻿<common:LayoutAwarePage
     x:Name="pageRoot"
-    x:Class="Cirrious.Sphero.WorkBench.UI.WinRT.Views.HomeView"
+    x:Class="Cirrious.Sphero.WorkBench.UI.WinRT.Views.SpheroView"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,17 +8,13 @@
     xmlns:common="using:Cirrious.Sphero.WorkBench.UI.WinRT.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:callisto="using:Callisto.Controls" xmlns:controls="using:Cirrious.Sphero.WorkBench.UI.WinRT.Controls"
     mc:Ignorable="d">
 
     <Page.Resources>
 
-        <!-- Collection of items displayed by this page -->
-        <CollectionViewSource
-            x:Name="itemsViewSource"
-            Source="{Binding ListService.AvailableSpheros}"/>
-
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">BALL CONTROL</x:String>
+        <x:String x:Key="AppName">Ball Control</x:String>
     </Page.Resources>
 
     <!--
@@ -32,37 +28,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Horizontal scrolling grid used in most view states -->
-        <GridView
-            x:Name="itemGridView"
-            AutomationProperties.AutomationId="ItemsGridView"
-            AutomationProperties.Name="Items"
-            TabIndex="1"
-            Grid.RowSpan="2"
-            Padding="116,136,116,46"
-            ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
-            ItemTemplate="{StaticResource Sphero250x250ItemTemplate}"
-            SelectionMode="Single"
-            IsSwipeEnabled="false"
-            SelectedIndex="-1"
-            SelectionChanged="ItemGridView_OnSelectionChanged"/>
-
-        <!-- Vertical scrolling list only used when snapped -->
-        <ListView
-            x:Name="itemListView"
-            AutomationProperties.AutomationId="ItemsListView"
-            AutomationProperties.Name="Items"
-            TabIndex="1"
-            SelectedIndex="-1"
-            Grid.Row="1"
-            Visibility="Collapsed"
-            Margin="0,-10,0,0"
-            Padding="10,0,0,60"
-            ItemTemplate="{StaticResource Sphero80ItemTemplate}"
-            SelectionMode="Single"
-            IsSwipeEnabled="false"
-            SelectionChanged="ItemListView_OnSelectionChanged" />
-
         <!-- Back button and page title -->
         <Grid>
             <Grid.ColumnDefinitions>
@@ -70,9 +35,39 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" IsHitTestVisible="false" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
+        
+        <Grid Grid.Row="1">
+        <ComboBox x:Name="SelectView" HorizontalAlignment="Right" VerticalAlignment="Top" SelectionChanged="Selector_OnSelectionChanged" Margin="0,19,0,0">
+            <ComboBoxItem Content="Move" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="Heading"></ComboBoxItem>
+            <ComboBoxItem Content="Colour"></ComboBoxItem>
+            <ComboBoxItem Content="Tilt"></ComboBoxItem>
+        </ComboBox>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="MoveGrid">
+                <controls:Joystick x:Name="MoveJoystick" ></controls:Joystick>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="TurnGrid">
+                <controls:Joystick x:Name="TurnJoystick" ></controls:Joystick>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="ColorGrid" DataContext="{Binding Color}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="120">
+                    <Slider Background="#2f0000" Foreground="Red" Value="{Binding Red, Mode=TwoWay}" Minimum="0" Maximum="255"></Slider>
+                    <Slider Background="#002f00" Foreground="Green" Value="{Binding Green, Mode=TwoWay}" Minimum="0" Maximum="255"></Slider>
+                    <Slider Background="#00002f" Foreground="Blue" Value="{Binding Blue, Mode=TwoWay}" Minimum="0" Maximum="255"></Slider>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="TiltGrid" Margin="0,-25,0,25">
+                <controls:Joystick x:Name="TiltJoystick" ></controls:Joystick>
+            </Grid>
 
+            <!--
+            <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="TurnRectangle">
+            </Rectangle>
+            -->
+        </Grid>
+        
         <VisualStateManager.VisualStateGroups>
 
             <!-- Visual states reflect the application's view state -->
@@ -86,16 +81,10 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PortraitBackButtonStyle}"/>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Padding">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="96,136,86,56"/>
-                        </ObjectAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>
 
-                <!--
-                    The back button and title have different styles when snapped, and the list representation is substituted
-                    for the grid displayed in all other view states
-                -->
+                <!-- The back button and title have different styles when snapped -->
                 <VisualState x:Name="Snapped">
                     <Storyboard>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
@@ -103,13 +92,6 @@
                         </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Visibility">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Visibility">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
                         </ObjectAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>

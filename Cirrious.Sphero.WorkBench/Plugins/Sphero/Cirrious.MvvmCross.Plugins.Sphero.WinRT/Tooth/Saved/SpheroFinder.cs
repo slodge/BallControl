@@ -27,8 +27,20 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
         {
             try
             {
-                var items = HackSingleton.Instance.Service.GetAvailableSpheroNames();
-                onSuccess(items.Select(x => new AvailableSphero(x)).ToList<IAvailableSphero>());
+                // what?!
+                var list = HackSingleton.Instance.Service.GetAvailableSpheroNames();
+
+                var i = 12;
+                /*
+                PeerFinder.Start("Bluetooth:Paired");
+                PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
+                var peers = await PeerFinder.FindAllPeersAsync();
+                var spheroPeers = peers
+                    .Where(p => p.DisplayName.Contains("Sphero"))
+                    .Select(p => new AvailableSphero(p))
+                    .ToList<IAvailableSphero>();
+                onSuccess(spheroPeers);
+                 */
             }
             catch (Exception exception)
             {

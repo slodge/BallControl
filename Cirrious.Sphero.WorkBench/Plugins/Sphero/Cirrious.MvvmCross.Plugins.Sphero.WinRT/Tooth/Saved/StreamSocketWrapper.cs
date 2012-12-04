@@ -17,33 +17,36 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
 {
     public class StreamSocketWrapper : IStreamSocketWrapper, IDisposable
     {
-        public StreamSocketWrapper()
+        private readonly StreamSocket _spheroSocket;
+
+        public StreamSocketWrapper(StreamSocket spheroSocket)
         {
+            _spheroSocket = spheroSocket;
         }
 
         public async Task<byte> ReceiveByte()
         {
-            byte[] buffer = null;
-
-            while (buffer == null)
+            IBuffer buffer;
+            try
             {
-                try
-                {
-                    buffer = HackSingleton.Instance.Service.ReceiveFromSphero(1);
-                }
-                catch (Exception exception)
-                {
-                    throw new SpheroPluginException(exception, "Read failed - suspect disconnected");
-                }
+                buffer =
+                    await
+                    _spheroSocket.InputStream.ReadAsync(new Windows.Storage.Streams.Buffer(1), 1,
+                                                        InputStreamOptions.None);
+            }
+            catch (Exception exception)
+            {
+                throw new SpheroPluginException(exception, "Read failed - suspect disconnected");
             }
 
-            var x = buffer[0];
+            var x = buffer.GetByteFromBuffer();
             return x;
         }
 
         public async Task SendBytes(byte[] payload)
         {
-            HackSingleton.Instance.Service.SendToSphero(payload);
+            var buffer = payload.GetBufferFromByteArray();
+            await _spheroSocket.OutputStream.WriteAsync(buffer);
         }
 
         public void Dispose()
@@ -55,7 +58,7 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
         {
             if (isDisposing)
             {
-                // nothing to do
+                _spheroSocket.Dispose();
             }
         }
     }

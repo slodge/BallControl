@@ -1,0 +1,1 @@
+﻿These files might be useful again one day... when WinRT supports BlueTooth SPP (yes, please)

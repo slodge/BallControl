@@ -8,6 +8,7 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
+using Cirrious.MvvmCross.Exceptions;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Windows.Networking.Proximity;
 using Windows.Networking.Sockets;
@@ -17,8 +18,8 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
 {
     public class AvailableSphero : BaseSphero, IAvailableSphero
     {
-        public AvailableSphero(PeerInformation peerInformation)
-            : base(peerInformation)
+        public AvailableSphero(string name)
+            : base(name)
         {
         }
 
@@ -31,8 +32,16 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
         {
             try
             {
-                var spheroSocket = await PeerFinder.ConnectAsync(PeerInformation);
-                onSuccess(new ConnectedSphero(PeerInformation, spheroSocket));
+                var success = HackSingleton.Instance.Service.ConnectToSphero(Name);
+
+                if (success)
+                {
+                    onSuccess(new ConnectedSphero(Name));
+                }
+                else
+                {
+                    onError(new SpheroPluginException("Failed to connect"));
+                }
             }
             catch (Exception exception)
             {

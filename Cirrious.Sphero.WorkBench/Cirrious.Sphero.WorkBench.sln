@@ -65,6 +65,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.Sphero.WorkBench.UI.WinRT", "Cirrious.Sphero.WorkBench.UI.WinRT\Cirrious.Sphero.WorkBench.UI.WinRT.csproj", "{87803A95-F544-44DD-8BB5-C6F5433AC33C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinRTWorkaround", "WinRTWorkaround", "{E9099647-87A3-4A36-B9DC-8503C848F9CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.Sphero.WorkBench.WinRTHackService", "WinRTWorkaround\Cirrious.Sphero.WorkBench.WinRTHackService\Cirrious.Sphero.WorkBench.WinRTHackService.csproj", "{63864350-86D7-4968-A281-E0CE56932821}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -411,6 +415,16 @@ Global
 		{87803A95-F544-44DD-8BB5-C6F5433AC33C}.Release|x86.ActiveCfg = Release|x86
 		{87803A95-F544-44DD-8BB5-C6F5433AC33C}.Release|x86.Build.0 = Release|x86
 		{87803A95-F544-44DD-8BB5-C6F5433AC33C}.Release|x86.Deploy.0 = Release|x86
+		{63864350-86D7-4968-A281-E0CE56932821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Release|ARM.ActiveCfg = Release|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Release|x64.ActiveCfg = Release|Any CPU
+		{63864350-86D7-4968-A281-E0CE56932821}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -442,5 +456,6 @@ Global
 		{CD3C7B1C-5E5C-4647-8FE7-A916480F2D31} = {17E8C455-F35A-4EB3-978D-7235FC804DCC}
 		{F98C9E31-75C3-4E33-B916-9439139EDDA0} = {17E8C455-F35A-4EB3-978D-7235FC804DCC}
 		{D798AC60-D518-421D-BC5A-DA86F3B7F934} = {17E8C455-F35A-4EB3-978D-7235FC804DCC}
+		{63864350-86D7-4968-A281-E0CE56932821} = {E9099647-87A3-4A36-B9DC-8503C848F9CD}
 	EndGlobalSection
 EndGlobal

@@ -14,16 +14,21 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
 {
     public class BaseSphero : IBaseSphero
     {
-        private readonly string _name;
+        private readonly PeerInformation _peerInformation;
 
-        public BaseSphero(string name)
+        public BaseSphero(PeerInformation peerInformation)
         {
-            _name = name;
+            _peerInformation = peerInformation;
         }
 
         public string Name
         {
-            get { return _name; }
+            get { return _peerInformation.DisplayName; }
+        }
+
+        protected PeerInformation PeerInformation
+        {
+            get { return _peerInformation; }
         }
     }
 }

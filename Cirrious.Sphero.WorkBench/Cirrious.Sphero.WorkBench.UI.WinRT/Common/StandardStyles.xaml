@@ -1641,6 +1641,18 @@
 
     <!-- Item templates -->
 
+    <!-- Grid-appropriate Sphero 250 pixel square item template as seen in the GroupedItemsPage and ItemsPage -->
+    <DataTemplate x:Key="Sphero250x250ItemTemplate">
+        <Grid HorizontalAlignment="Left" Width="250" Height="250">
+            <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                <Image Source="/Assets/ApplicationIcon.png" Stretch="UniformToFill" />
+            </Border>
+            <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                <TextBlock Text="{Binding Name}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="60" Margin="15,0,15,0"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    
     <!-- Grid-appropriate 250 pixel square item template as seen in the GroupedItemsPage and ItemsPage -->
     <DataTemplate x:Key="Standard250x250ItemTemplate">
         <Grid HorizontalAlignment="Left" Width="250" Height="250">
@@ -1711,7 +1723,8 @@
     </DataTemplate>
 
     <DataTemplate x:Key="Sphero80ItemTemplate">
-        <Grid Margin="6">
+            <Grid Margin="6">
+                
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
@@ -1719,7 +1732,7 @@
             <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="60" Height="60">
                 <Image Source="/Assets/ApplicationIcon.png" Stretch="UniformToFill"/>
             </Border>
-            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+            <StackPanel Grid.Column="1" Margin="10,0,0,0" >
                 <TextBlock Text="{Binding Name}" Style="{StaticResource ItemTextStyle}" MaxHeight="40"/>
                 <!--
                 <TextBlock Text="{Binding Subtitle}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>

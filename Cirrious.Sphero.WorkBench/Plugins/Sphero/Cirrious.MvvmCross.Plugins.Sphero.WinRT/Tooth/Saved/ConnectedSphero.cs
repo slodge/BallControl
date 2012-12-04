@@ -21,10 +21,10 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.WinRT.Tooth
         private readonly StreamSocketWrapper _spheroSocketWrapper;
         private readonly AwaitingConnectedSpheroRunner _runner;
 
-        public ConnectedSphero(string name)
-            : base(name)
+        public ConnectedSphero(PeerInformation peerInformation, StreamSocket spheroSocket)
+            : base(peerInformation)
         {
-            _spheroSocketWrapper = new StreamSocketWrapper();
+            _spheroSocketWrapper = new StreamSocketWrapper(spheroSocket);
             _runner = new AwaitingConnectedSpheroRunner(_spheroSocketWrapper);
             _runner.Disconnected += (sender, args) => RaiseDisconnected();
             _runner.Start();

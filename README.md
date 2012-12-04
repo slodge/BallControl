@@ -24,7 +24,12 @@ Using the WP8 APIs - abstracted inside PCL MvvmCross plugins, you can control th
 - tilt
 - voice
 
-The current repo includes a first version of Ball Control for *Xaramin Mono for Android*. this is in draft at present - it works but is not styled yet. Ball Control will also soon provide *WinRT* and *Xamarin MonoTouch for iOS* version :)
+The current repo includes:
+
+- a first version of Ball Control for *Xaramin Mono for Android*. this is in draft at present - it works but is not styled yet. 
+- a hacky version for WinRT/Metro - this is hacky because Windows Store does not allow you to access Bluetooth SPP. Hopefully Microsoft can help with this... we need this support :( Without it then users need to install a workaround windows service :(
+
+Ball Control will also soon provide a *Xamarin MonoTouch for iOS* version :)
 
 More will follow - especially if you join this project and help make it even more awesome.
 
