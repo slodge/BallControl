@@ -48,6 +48,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
                 return;
             }
 
+			SpheroTrace.Trace("Sending command {0}", command);
             sphero.SendAndReceive(command, OnCommandSuccess, OnCommandError);
         }
 

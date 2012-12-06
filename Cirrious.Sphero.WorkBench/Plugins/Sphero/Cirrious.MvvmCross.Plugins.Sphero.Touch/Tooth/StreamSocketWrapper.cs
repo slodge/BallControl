@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using Cirrious.MvvmCross.Plugins.Sphero.HackFileShare;
 using MonoTouch.ExternalAccessory;
 using MonoTouch.Foundation;
+using Cirrious.MvvmCross.Platform.Diagnostics;
+using Cirrious.MvvmCross.ExtensionMethods;
+using System.Threading;
 
 namespace Cirrious.MvvmCross.Plugins.Sphero.Touch.Tooth
 {
@@ -24,10 +27,11 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.Touch.Tooth
             _spheroSocket = spheroSocket;
 
 			_spheroSocket.InputStream.OnEvent += DataReceived;
-			_spheroSocket.InputStream.Schedule(NSRunLoop.Current, "kCFRunLoopDefaultMode");                                                      
+			_spheroSocket.InputStream.Schedule(NSRunLoop.Main, "kCFRunLoopDefaultMode");                                                      
 			_spheroSocket.InputStream.Open();     
-			
-			_spheroSocket.OutputStream.Schedule(NSRunLoop.Current, "kCFRunLoopDefaultMode"); 
+		
+			_spheroSocket.OutputStream.OnEvent += Ignored;
+			_spheroSocket.OutputStream.Schedule(NSRunLoop.Main, "kCFRunLoopDefaultMode"); 
 			_spheroSocket.OutputStream.Open();
         }
 
@@ -35,6 +39,11 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.Touch.Tooth
 		{
 			// TODO - ignored for now...
 			// throw new NotImplementedException ();
+		}
+
+		void Ignored (object sender, NSStreamEventArgs e)
+		{
+			//throw new NotImplementedException ();
 		}
 
         public Task<byte> ReceiveByte()
@@ -47,7 +56,14 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.Touch.Tooth
             var buffer = new byte[1];
             try
             {
-                _spheroSocket.InputStream.Read(buffer, 1);
+				while (true)
+				{
+                	var count =  _spheroSocket.InputStream.Read(buffer, 1);
+					if (count > 0)
+						break;
+
+					Thread.Sleep(1);
+				}
             }
             catch (Exception exception)
             {
@@ -62,11 +78,19 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.Touch.Tooth
             return new Task(() => DoSendBytes(payload));
         }
 
-        private void DoSendBytes(byte[] payload)
-        {
-			// TODO - should probably check what Write returns and maybe do a loop to send everything
-            _spheroSocket.OutputStream.Write(payload, (uint)payload.Length);
-        }
+        private void DoSendBytes (byte[] payload)
+		{
+			try 
+			{
+				// TODO - should probably check what Write returns and maybe do a loop to send everything
+				_spheroSocket.OutputStream.Write (payload, (uint)payload.Length);
+			} 
+			catch (System.Exception exc) 
+			{
+				MvxTrace.Trace("!!!! Error seen {0}", exc.ToLongString());
+				throw;
+			}
+		}
 
         public void Dispose()
         {

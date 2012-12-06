@@ -4,6 +4,11 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Cirrious.MvvmCross.Touch.Views.Presenters;
+using Cirrious.MvvmCross.Interfaces.ViewModels;
+using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.MvvmCross.Touch.Platform;
+using Cirrious.MvvmCross.Interfaces.ServiceProvider;
 
 namespace Cirrious.Sphero.WorkBench.UI.Touch
 {
@@ -11,7 +16,9 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch
 	// User Interface of the application, as well as listening (and optionally responding) to 
 	// application events from iOS.
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate 
+		: MvxApplicationDelegate
+	    , IMvxServiceConsumer
 	{
 		// class-level declarations
 		UIWindow window;
@@ -29,17 +36,13 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch
 			// create a new window instance based on the screen size
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 
-			/*
-			var viewController1 = new FirstViewController ();
-			var viewController2 = new SecondViewController ();
-			tabBarController = new UITabBarController ();
-			tabBarController.ViewControllers = new UIViewController [] {
-				viewController1,
-				viewController2,
-			};
+			var presenter = new MvxTouchViewPresenter(this, window);
+			var setup = new Setup(this, presenter);
+			setup.Initialize();
 			
-			window.RootViewController = tabBarController;
-			*/
+			// start the app
+			var start = this.GetService<IMvxStartNavigation>();
+			start.Start();
 
 			// make the window visible
 			window.MakeKeyAndVisible ();

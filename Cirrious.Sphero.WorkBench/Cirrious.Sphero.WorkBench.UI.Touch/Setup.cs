@@ -35,6 +35,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch
 		{
 			registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Accelerometer.Touch.Plugin>();
 			registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Color.Touch.Plugin>();
+			registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.DownloadCache.Touch.Plugin>();
 			registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.File.Touch.Plugin>();
 			registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.ResourceLoader.Touch.Plugin>();
 			registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Settings.Touch.Plugin>();
