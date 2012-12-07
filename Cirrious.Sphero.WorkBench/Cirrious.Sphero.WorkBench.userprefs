@@ -1,0 +1,116 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroViewModel.cs">
+    <Files>
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Plugin.cs" Line="13" Column="46" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/AvailableSphero.cs" Line="33" Column="1" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/SpheroFinder.cs" Line="21" Column="62" />
+      <File FileName="../../../../Projects/ExtAcc/ExtAcc/ExtAccViewController.cs" Line="163" Column="1" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/BaseSphero.cs" Line="13" Column="50" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/ConnectedSphero.cs" Line="39" Column="1" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/StreamSocketWrapper.cs" Line="29" Column="1" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero/Commands/GetColorLedCommand.cs" Line="18" Column="51" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero/Cirrious.MvvmCross.Plugins.Sphero.csproj" Line="16" Column="5" />
+      <File FileName="../../Mvx/MvvmCross/CrossUI/CrossUI.Core/CrossUI.Core.csproj" Line="14" Column="5" />
+      <File FileName="Plugins/Accelerometer/Cirrious.MvvmCross.Plugins.Accelerometer.Touch/Plugin.cs" Line="14" Column="57" />
+      <File FileName="Plugins/Accelerometer/Cirrious.MvvmCross.Plugins.Accelerometer.Touch/SimpleAccelerometer.cs" Line="81" Column="38" />
+      <File FileName="Plugins/Accelerometer/Cirrious.MvvmCross.Plugins.Accelerometer/PluginLoader.cs" Line="19" Column="6" />
+      <File FileName="Plugins/Settings/Cirrious.MvvmCross.Plugins.Settings/PluginLoader.cs" Line="10" Column="26" />
+      <File FileName="Plugins/Settings/Cirrious.MvvmCross.Plugins.Settings.Touch/Plugin.cs" Line="14" Column="52" />
+      <File FileName="Plugins/Settings/Cirrious.MvvmCross.Plugins.Settings.Touch/Settings.cs" Line="10" Column="52" />
+      <File FileName="Plugins/Speech/Cirrious.MvvmCross.Plugins.Speech.Touch/Plugin.cs" Line="13" Column="50" />
+      <File FileName="Plugins/XamPhotos/Cirrious.MvvmCross.Plugins.XamPhotos/Cirrious.MvvmCross.Plugins.XamPhotos.csproj" Line="13" Column="58" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/Cirrious.Sphero.WorkBench.Core.csproj" Line="16" Column="5" />
+      <File FileName="Plugins/XamPhotos/Cirrious.MvvmCross.Plugins.XamPhotos.Touch/Plugin.cs" Line="14" Column="53" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Setup.cs" Line="14" Column="17" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Main.cs" Line="17" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/BaseViewModel.cs" Line="17" Column="52" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/AboutViewModel.cs" Line="27" Column="65" />
+      <File FileName="../../Mvx/MvvmCross/Cirrious/Cirrious.MvvmCross/ViewModels/MvxViewModel.cs" Line="1" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/AppDelegate.cs" Line="21" Column="6" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Droid/Setup.cs" Line="18" Column="11" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.WindowsPhone/Setup.cs" Line="37" Column="1" />
+      <File FileName="HomeView.cs" Line="53" Column="1" />
+      <File FileName="../../Mvx/MvvmCross/Sample - CustomerManagement/CustomerManagement/CustomerManagement.Touch/Views/CustomerListView.cs" Line="41" Column="139" />
+      <File FileName="../../Mvx/MvvmCross/Sample - BestSellers/BestSellers/BestSellers.Touch/Views/BookListView.cs" Line="41" Column="36" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/HomeViewModel.cs" Line="49" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroMovementView.designer.cs" Line="14" Column="11" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Droid/Views/SpheroSubViews/SpheroMovementView.cs" Line="25" Column="109" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroSubViewModels/RelativePositionParameters.cs" Line="14" Column="1" />
+      <File FileName="../../Mvx/MvvmCross/Sample - BestSellers/BestSellers/BestSellers.Touch/AppDelegate.cs" Line="31" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Views/HomeView.cs" Line="41" Column="1" />
+      <File FileName="../../Mvx/MvvmCross/Sample - Tutorial/Tutorial/Tutorial.UI.Touch/VIews/MainMenuView.cs" Line="31" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroView.cs" Line="37" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroViewModel.cs" Line="174" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroMovementView.cs" Line="11" Column="51" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroSubViewModels/SpheroMovementViewModel.cs" Line="1" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroSubViewModels/BaseSpheroMovementViewModel.cs" Line="49" Column="18" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroSubViewModels/BaseSpheroChildViewModel.cs" Line="47" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Info.plist" />
+      <File FileName="Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroSubViewModels/ISpheroParentViewModel.cs" Line="17" Column="9" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero/Interfaces/IConnectedSphero.cs" Line="17" Column="9" />
+      <File FileName="Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone/HackFileShare/NonAwaitingConnectedSpheroRunner.cs" Line="77" Column="1" />
+      <File FileName="Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroColorView.cs" Line="21" Column="6" />
+      <File FileName="../../Mvx/MvvmCross/Sample - BestSellers/BestSellers/BestSellers.Touch/Views/BookView.cs" Line="1" Column="1" />
+      <File FileName="../../Mvx/MvvmCross/Sample - CustomerManagement/CustomerManagement/CustomerManagement.Touch/Views/CustomerView.cs" Line="9" Column="57" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Plugins" expanded="True">
+            <Node name="Sphero" expanded="True">
+              <Node name="Cirrious.MvvmCross.Plugins.Sphero" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+              </Node>
+              <Node name="Cirrious.MvvmCross.Plugins.Sphero.Touch" expanded="True">
+                <Node name="HackFileShare" expanded="True" />
+                <Node name="Tooth" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Cirrious.Sphero.WorkBench.Core" expanded="True">
+            <Node name="ViewModels" expanded="True">
+              <Node name="SpheroSubViewModels" expanded="True" />
+              <Node name="SpheroViewModel.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="Cirrious.Sphero.WorkBench.UI.Touch" expanded="True">
+            <Node name="Views" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True">
+          <Node name="Plugins" expanded="True">
+            <Node name="Speech" expanded="True" />
+            <Node name="Sphero" expanded="True" />
+          </Node>
+          <Node name="Cirrious.Sphero.WorkBench.UI.Touch" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroSubViewModels/BaseSpheroChildViewModel.cs" line="47" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/AvailableSphero.cs" line="33" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/StreamSocketWrapper.cs" line="29" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/AvailableSphero.cs" line="35" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.Touch/Tooth/StreamSocketWrapper.cs" line="91" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroViewModel.cs" line="174" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.Core/ViewModels/SpheroViewModel.cs" line="166" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Plugins/Sphero/Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone/HackFileShare/NonAwaitingConnectedSpheroRunner.cs" line="116" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroColorView.cs" line="22" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroView.cs" line="37" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.UI.Touch/Views/SpheroView.cs" line="29" />
+      <Breakpoint file="/Users/stuartlodge/Documents/GitHub/BallControl/Cirrious.Sphero.WorkBench/Cirrious.Sphero.WorkBench.UI.Touch/Views/HomeView.cs" line="41" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

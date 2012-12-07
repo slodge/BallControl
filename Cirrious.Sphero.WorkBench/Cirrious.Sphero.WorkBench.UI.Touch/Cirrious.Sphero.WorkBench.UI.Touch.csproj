@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF22D64C-FEA2-4F47-8EF4-E25F754FBE90}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Cirrious.Sphero.WorkBench.UI.Touch</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>CirriousSpheroWorkBenchUITouch</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>True</MtouchProfiling>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>True</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <BuildIpa>True</BuildIpa>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Cirrious.MvvmCross.Binding.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Dialog.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Dialog.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.Color.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="CrossUI.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\CrossUI.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
+      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="CrossUI.Core">
+      <HintPath>..\..\MvvmCross\bin\Portable\Debug\CrossUI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugin.Visibility.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugin.Visibility.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Share.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.Share.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.File.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache.Touch">
+      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.DownloadCache.Touch.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Views\SpheroView.cs" />
+    <Compile Include="Views\HomeView.cs" />
+    <Compile Include="Views\SpheroMovementView.cs" />
+    <Compile Include="Views\SpheroMovementView.designer.cs">
+      <DependentUpon>SpheroMovementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpheroColorView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\first.png" />
+    <BundleResource Include="Resources\first%402x.png" />
+    <BundleResource Include="Resources\second.png" />
+    <BundleResource Include="Resources\second%402x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Cirrious.Sphero.WorkBench.Core\Cirrious.Sphero.WorkBench.Core.csproj">
+      <Project>{066482E7-A44C-4911-B983-E3A5E41CFB7C}</Project>
+      <Name>Cirrious.Sphero.WorkBench.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.Touch\Cirrious.MvvmCross.Plugins.XamPhotos.Touch.csproj">
+      <Project>{F8C3BF4C-5633-4386-BE8F-8A1C13BF7B89}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
+      <Project>{FF37BE9C-CF12-4994-9E15-1B3C07D7B68B}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.Touch\Cirrious.MvvmCross.Plugins.Sphero.Touch.csproj">
+      <Project>{FC2F0606-5A10-411A-B622-E7D39DA34D2B}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Sphero.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
+      <Project>{5400CDE5-AD8A-408A-AEA7-FDDF9BF76AEF}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.Touch\Cirrious.MvvmCross.Plugins.Speech.Touch.csproj">
+      <Project>{5191B53A-B399-49E0-BCF5-2087BE820E59}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Speech.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech\Cirrious.MvvmCross.Plugins.Speech.csproj">
+      <Project>{333CC951-D5D1-4DD5-AC37-06C6790BB0CF}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Speech</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.Touch\Cirrious.MvvmCross.Plugins.Settings.Touch.csproj">
+      <Project>{16340A6B-4C48-462B-B75B-B61DD4DB3052}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Settings.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings\Cirrious.MvvmCross.Plugins.Settings.csproj">
+      <Project>{178F162F-3D32-48EA-8894-49949E58495E}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.Touch\Cirrious.MvvmCross.Plugins.Accelerometer.Touch.csproj">
+      <Project>{ED445165-3EBC-4474-8178-A2C3A41A18FD}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Accelerometer.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.csproj">
+      <Project>{B81C8F9A-FE2C-4807-90BA-D34CB25D8CE6}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Accelerometer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Images\Tabs\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Tabs\color.png" />
+    <Content Include="Images\Tabs\tilt.png" />
+    <Content Include="Images\Tabs\move.png" />
+    <Content Include="Images\Tabs\heading.png" />
+    <Content Include="Images\SpheroIcon100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\SpheroMovementView.xib" />
+  </ItemGroup>
+</Project>

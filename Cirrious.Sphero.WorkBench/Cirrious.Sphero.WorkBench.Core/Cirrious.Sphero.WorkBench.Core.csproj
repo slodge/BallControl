@@ -11,14 +11,17 @@
     <RootNamespace>Cirrious.Sphero.WorkBench.Core</RootNamespace>
     <AssemblyName>Cirrious.Sphero.WorkBench.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile104</TargetFrameworkProfile>
+    <TargetFrameworkProfile Condition="'$(OS)' != 'Windows_NT'">Profile1</TargetFrameworkProfile>
+    <TargetFrameworkProfile Condition="'$(OS)' == 'Windows_NT'">Profile104</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -26,7 +29,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -107,7 +110,7 @@
       <Name>Cirrious.MvvmCross.Plugins.Accelerometer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
-      <Project>{5400cde5-ad8a-408a-aea7-fddf9bf76aef}</Project>
+      <Project>{5400CDE5-AD8A-408A-AEA7-FDDF9BF76AEF}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings\Cirrious.MvvmCross.Plugins.Settings.csproj">
@@ -115,11 +118,11 @@
       <Name>Cirrious.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech\Cirrious.MvvmCross.Plugins.Speech.csproj">
-      <Project>{333cc951-d5d1-4dd5-ac37-06c6790bb0cf}</Project>
+      <Project>{333CC951-D5D1-4DD5-AC37-06C6790BB0CF}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Speech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{ff37be9c-cf12-4994-9e15-1b3c07d7b68b}</Project>
+      <Project>{FF37BE9C-CF12-4994-9E15-1B3C07D7B68B}</Project>
       <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
     </ProjectReference>
   </ItemGroup>
