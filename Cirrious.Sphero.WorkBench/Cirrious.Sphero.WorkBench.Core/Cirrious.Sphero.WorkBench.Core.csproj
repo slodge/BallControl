@@ -71,7 +71,6 @@
       <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Console">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Console.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Localization.dll</HintPath>
