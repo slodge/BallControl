@@ -11,10 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+#if NETFX_CORE
+using Windows.System.Threading;
+#endif
 using Cirrious.MvvmCross.Plugins.Sphero.Helpers;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.MvvmCross.Plugins.Sphero.Messages;
-using Windows.System.Threading;
 
 // ReSharper disable CheckNamespace
 
@@ -44,8 +46,13 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.HackFileShare
 
         public void Start()
         {
-            Windows.System.Threading.ThreadPool.RunAsync(ignored => ReceiveResponses());
-            Windows.System.Threading.ThreadPool.RunAsync(ignored => SendCommmands());
+#if NETFX_CORE
+            ThreadPool.RunAsync(ignored => ReceiveResponses());
+            ThreadPool.RunAsync(ignored => SendCommmands());
+#else
+            ThreadPool.QueueUserWorkItem(ignored => ReceiveResponses());
+            ThreadPool.QueueUserWorkItem(ignored => SendCommmands());
+#endif
         }
 
         public void SendAndReceive(ISpheroCommand command, Action<ISpheroMessage> onSuccess, Action<Exception> onError)
