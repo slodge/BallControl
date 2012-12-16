@@ -9,6 +9,7 @@
 
 using System;
 using System.Windows;
+using System.Windows.Navigation;
 using Cirrious.MvvmCross.WindowsPhone.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels;
 
@@ -34,6 +35,9 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             /// HACK HACK - this should be bound and should use NotifyCollectionChanged to
             if (_hackVisibleConnected)
                 return;
+
+            if (e.NavigationMode == NavigationMode.Back)
+                this.ViewModel.RefreshListCommand.Execute(null);
 
             HackVisibleHelp();
             ViewModel.ListService.PropertyChanged += (sender, args) => HackVisibleHelp();
@@ -65,6 +69,13 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
         private void ApplicationBarIconButton_Bluetooth_OnClick(object sender, EventArgs e)
         {
             ViewModel.GoToBluetoothCommand.Execute(null);
+        }
+
+        private void ApplicationBarMenuItem_Gangnam_OnClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("OK to play music now?", "Ball Control", MessageBoxButton.OKCancel) != MessageBoxResult.OK)
+                return;
+            ViewModel.GoToGangnamStyleCommand.Execute(null);
         }
     }
 

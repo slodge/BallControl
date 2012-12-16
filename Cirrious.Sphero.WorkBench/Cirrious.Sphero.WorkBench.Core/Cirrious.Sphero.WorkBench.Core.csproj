@@ -47,6 +47,7 @@
     <Compile Include="StartApplicationObject.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\GangnamStyleViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\PhotoListViewModel.cs" />
     <Compile Include="ViewModels\SpheroSubViewModels\BaseSpheroChildViewModel.cs" />
@@ -69,8 +70,6 @@
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
       <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Console">
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Localization.dll</HintPath>

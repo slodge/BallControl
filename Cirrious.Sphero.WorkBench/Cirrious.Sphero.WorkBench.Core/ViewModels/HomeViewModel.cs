@@ -44,6 +44,11 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
             get { return new MvxRelayCommand(() => RequestNavigate<AboutViewModel>()); }
         }
 
+        public ICommand GoToGangnamStyleCommand
+        {
+            get { return new MvxRelayCommand(() => RequestNavigate<GangnamStyleViewModel>()); }
+        }
+
         private void DoRefreshList()
         {
             _listService.RefreshList();

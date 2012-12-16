@@ -41,6 +41,7 @@
     <ScreenResolutions>
       <ScreenResolution Name="ID_RESOLUTION_WXGA" />
       <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
     </ScreenResolutions>
     <Requirements>
       <Requirement Name="ID_REQ_REARCAMERA" />

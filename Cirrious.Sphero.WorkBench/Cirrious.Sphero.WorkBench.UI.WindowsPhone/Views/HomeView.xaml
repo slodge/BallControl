@@ -68,6 +68,7 @@
             -->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="About" Click="ApplicationBarMenuItem_About_OnClick"/>
+                <shell:ApplicationBarMenuItem Text="Dance" Click="ApplicationBarMenuItem_Gangnam_OnClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

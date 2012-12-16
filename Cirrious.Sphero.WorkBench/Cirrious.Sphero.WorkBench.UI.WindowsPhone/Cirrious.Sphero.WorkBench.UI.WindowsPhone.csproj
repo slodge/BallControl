@@ -111,6 +111,9 @@
     <Compile Include="Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GangnamStyleView.xaml.cs">
+      <DependentUpon>GangnamStyleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
     <Page Include="Views\AboutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GangnamStyleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
@@ -173,8 +180,10 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Music\Tony_Warrior_reggaeton_pop1.mp3" />
     <Content Include="Assets\SpheroIcon100.png" />
     <Content Include="Assets\steeringwheel400.png" />
+    <Content Include="Assets\store300.png" />
     <Content Include="Assets\Target.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
