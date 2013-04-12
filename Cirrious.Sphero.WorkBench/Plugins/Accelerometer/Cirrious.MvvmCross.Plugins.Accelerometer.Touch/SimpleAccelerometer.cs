@@ -8,18 +8,14 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
-using Cirrious.MvvmCross.Touch.Interfaces;
-using Cirrious.MvvmCross.Exceptions;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.CrossCore.Core;
+using Cirrious.CrossCore.Exceptions;
 using MonoTouch.UIKit;
 
 namespace Cirrious.MvvmCross.Plugins.Accelerometer.Touch
 {
     public class SimpleAccelerometer
         :  ISimpleAccelerometer
-          , IMvxServiceConsumer
     {
 		bool _initialised = false;
 

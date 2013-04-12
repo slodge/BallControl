@@ -92,7 +92,7 @@
       <HintPath>..\..\..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File">
-      <HintPath>..\..\..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+      <HintPath>..\..\..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Mobile">
       <HintPath>..\..\..\Lib\X.M\WP8\Xamarin.Mobile.dll</HintPath>

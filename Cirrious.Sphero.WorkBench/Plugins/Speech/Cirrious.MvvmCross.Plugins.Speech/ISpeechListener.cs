@@ -9,7 +9,7 @@
 
 using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.CrossCore.Core;
 
 namespace Cirrious.MvvmCross.Plugins.Speech
 {

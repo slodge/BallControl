@@ -44,7 +44,6 @@
     <Compile Include="Services\SpheroSpeedService.cs" />
     <Compile Include="SpheroException.cs" />
     <Compile Include="SpheroTrace.cs" />
-    <Compile Include="StartApplicationObject.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\GangnamStyleViewModel.cs" />
@@ -65,41 +64,44 @@
     <Compile Include="ViewModels\SpheroViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Json">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.JsonLocalisation">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.JsonLocalisation.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.JsonLocalisation.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Share">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Share.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Share.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
     </Reference>
     <Reference Include="CrossUI.Core">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\CrossUI.Core.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\CrossUI.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -118,10 +120,6 @@
     <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech\Cirrious.MvvmCross.Plugins.Speech.csproj">
       <Project>{333CC951-D5D1-4DD5-AC37-06C6790BB0CF}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Speech</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{FF37BE9C-CF12-4994-9E15-1B3C07D7B68B}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

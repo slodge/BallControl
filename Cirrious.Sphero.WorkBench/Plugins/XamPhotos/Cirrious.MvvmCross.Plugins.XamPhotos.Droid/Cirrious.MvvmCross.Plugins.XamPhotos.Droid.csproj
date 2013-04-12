@@ -36,7 +36,7 @@
       <HintPath>..\..\..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Droid">
-      <HintPath>..\..\..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Droid.dll</HintPath>
+      <HintPath>..\..\..\..\Mvx\Droid\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />

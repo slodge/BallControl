@@ -8,8 +8,8 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.Plugins.Sphero.Commands;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 {
@@ -24,12 +24,12 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         public ICommand SetHeadingCommand
         {
-            get { return new MvxRelayCommand<int>(DoSetHeading); }
+            get { return new MvxCommand<int>(DoSetHeading); }
         }
 
         public ICommand ZeroRelativeHeadingCommand
         {
-            get { return new MvxRelayCommand(DoZeroRelativeHeading); }
+            get { return new MvxCommand(DoZeroRelativeHeading); }
         }
 
         private void DoZeroRelativeHeading()

@@ -8,10 +8,10 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.CrossCore.Core;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Accelerometer;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 {
@@ -27,7 +27,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         public ICommand EnsureAccelerometerIsOnCommand
         {
-            get { return new MvxRelayCommand<bool>(DoEnsureAccelerometerIsOn); }
+            get { return new MvxCommand<bool>(DoEnsureAccelerometerIsOn); }
         }
 
         private void DoEnsureAccelerometerIsOn(bool requestedState)
@@ -38,7 +38,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
             if (requestedState)
             {
-                _accelerometer = this.GetService<ISimpleAccelerometer>();
+                _accelerometer = Mvx.Resolve<ISimpleAccelerometer>();
                 _accelerometer.ReadingAvailable += AccelerometerOnReadingAvailable;
                 _accelerometer.Start();
             }

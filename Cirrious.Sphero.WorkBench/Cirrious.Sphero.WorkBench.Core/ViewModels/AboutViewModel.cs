@@ -8,9 +8,9 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.WebBrowser;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 {
@@ -18,13 +18,13 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
     {
         public ICommand GoToUrlCommand
         {
-            get { return new MvxRelayCommand<string>(DoGoToUrl);}
+            get { return new MvxCommand<string>(DoGoToUrl);}
         }
 
         private void DoGoToUrl(string url)
         {
             Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader.Instance.EnsureLoaded();
-            var browser = this.GetService<IMvxWebBrowserTask>();
+            var browser = Mvx.Resolve<IMvxWebBrowserTask>();
             browser.ShowWebPage(url);
         }
     }

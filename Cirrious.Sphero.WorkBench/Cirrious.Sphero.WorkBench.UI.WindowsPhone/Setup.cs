@@ -7,54 +7,46 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.Application;
+using Cirrious.CrossCore.Plugins;
 using Cirrious.MvvmCross.Platform;
+using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.WindowsPhone.Platform;
 using Microsoft.Phone.Controls;
 
 namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone
 {
     public class Setup
-        : MvxBaseWindowsPhoneSetup
+        : MvxPhoneSetup
     {
         public Setup(PhoneApplicationFrame rootFrame)
             : base(rootFrame)
         {
         }
 
-        protected override void InitializeDefaultTextSerializer()
+        protected override IMvxNavigationSerializer CreateNavigationSerializer()
         {
-            Cirrious.MvvmCross.Plugins.Json.PluginLoader.Instance.EnsureLoaded(true);
+            return new MvxJsonNavigationSerializer();
         }
 
-        protected override MvxApplication CreateApp()
+        protected override IMvxApplication CreateApp()
         {
             return new Cirrious.Sphero.WorkBench.Core.App();
         }
 
-        protected override void AddPluginsLoaders(MvxLoaderPluginRegistry registry)
+        public override void LoadPlugins(IMvxPluginManager pluginManager)
         {
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Accelerometer.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Color.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.File.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.ResourceLoader.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Settings.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Share.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Speech.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone.Plugin>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Json.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Accelerometer.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.File.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.ResourceLoader.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Settings.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Share.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Speech.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Sphero.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Visibility.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader>();
 
-            base.AddPluginsLoaders(registry);
-        }
-
-        protected override void InitializeLastChance()
-        {
-            Cirrious.MvvmCross.Plugins.Color.PluginLoader.Instance.EnsureLoaded();
-            Cirrious.MvvmCross.Plugins.Visibility.PluginLoader.Instance.EnsureLoaded();
-
-            base.InitializeLastChance();
+            base.LoadPlugins(pluginManager);
         }
     }
 }

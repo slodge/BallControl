@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Platform;
 
 namespace Cirrious.MvvmCross.Plugins.Speech.WinRT
 {

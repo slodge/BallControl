@@ -8,7 +8,7 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.Sphero.WorkBench.Core.Interfaces;
 
@@ -30,7 +30,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
         protected BaseSpheroChildViewModel(ISpheroParentViewModel parent)
         {
             Parent = parent;
-            _speedService = this.GetService<ISpheroSpeedService>();
+            _speedService = Mvx.Resolve<ISpheroSpeedService>();
         }
 
         public virtual void OnSpheroConnected()

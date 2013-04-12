@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.Sphero.WorkBench.Core.Interfaces;
 
@@ -18,7 +18,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
             _connectedSpheros = new List<IConnectedSphero>();
             _availableSpheros = new List<IAvailableSphero>();
 
-            var listService = this.GetService<ISpheroListService>();
+            var listService = Mvx.Resolve<ISpheroListService>();
             var availableSpheros = listService.AvailableSpheros;
             if (availableSpheros != null)
                 _availableSpheros.AddRange(availableSpheros);
@@ -46,10 +46,9 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
             }
         }
 
-        protected override void Shutdown()
+        public void Shutdown()
         {
             ClearConnectedSpheros();
-            base.Shutdown();
         }
 
         private void DoConnect()

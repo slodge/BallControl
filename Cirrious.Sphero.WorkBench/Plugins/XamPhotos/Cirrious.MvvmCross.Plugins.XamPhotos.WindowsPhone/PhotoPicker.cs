@@ -13,9 +13,9 @@ using System.IO;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Threading;
-using Cirrious.MvvmCross.ExtensionMethods;
+
 using Cirrious.MvvmCross.Interfaces.Platform.Diagnostics;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
 using Cirrious.MvvmCross.Platform.Diagnostics;
 using Cirrious.MvvmCross.Plugins.File;
 using Microsoft.Phone.Tasks;
@@ -54,7 +54,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone
                           if (t.IsCanceled)
                               return;
 
-                          var file = this.GetService<IMvxSimpleFileStoreService>();
+                          var file = Mvx.Resolve<IMvxSimpleFileStoreService>();
                           file.WriteFile(t.Result.Path, stream => t.Result.GetStream().CopyTo(stream));
                           file.WriteFile("Test.txt", "Some text");
                           onPhotoTaken(t.Result.Path);
@@ -78,7 +78,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone
 
         public void Share(string path)
         {
-            var file = this.GetService<IMvxSimpleFileStoreService>();
+            var file = Mvx.Resolve<IMvxSimpleFileStoreService>();
             using (var ms = new MemoryStream())
             {
                 file.TryReadBinaryFile(path, stream =>

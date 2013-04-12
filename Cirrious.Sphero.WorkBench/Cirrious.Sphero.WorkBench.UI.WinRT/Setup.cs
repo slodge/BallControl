@@ -1,39 +1,35 @@
-﻿using Cirrious.MvvmCross.Application;
-using Cirrious.MvvmCross.WinRT.Platform;
+﻿using Cirrious.MvvmCross.ViewModels;
+using Cirrious.MvvmCross.WindowsStore.Platform;
 using Windows.UI.Xaml.Controls;
 
 namespace Cirrious.Sphero.WorkBench.UI.WinRT
 {
     public class Setup
-        : MvxBaseWinRTSetup
+        : MvxStoreSetup
     {
         public Setup(Frame rootFrame)
             : base(rootFrame)
         {
         }
 
-        protected override MvxApplication CreateApp()
+        protected override IMvxApplication CreateApp()
         {
             var app = new Core.App();
             return app;
         }
 
-        protected override void AddPluginsLoaders(Cirrious.MvvmCross.Platform.MvxLoaderPluginRegistry registry)
+        public override void LoadPlugins(CrossCore.Plugins.IMvxPluginManager pluginManager)
         {
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Accelerometer.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Color.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.File.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.ResourceLoader.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Settings.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Share.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Speech.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Sphero.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.Visibility.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.WebBrowser.WinRT.Plugin>();
-            registry.AddConventionalPlugin<Cirrious.MvvmCross.Plugins.XamPhotos.WinRT.Plugin>();
-
-
-            base.AddPluginsLoaders(registry);
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Accelerometer.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.File.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.ResourceLoader.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Settings.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Share.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Speech.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Sphero.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Visibility.PluginLoader>();
+            pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader>();
+            base.LoadPlugins(pluginManager);
         }
     }
 }

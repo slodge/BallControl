@@ -9,8 +9,7 @@
 
 using System;
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Settings;
 using Cirrious.MvvmCross.ViewModels;
 
@@ -18,41 +17,26 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 {
     public abstract class BaseViewModel : MvxViewModel
     {
-        public BaseViewModel()
-        {
-			this.ViewUnRegistered += OnViewUnRegistered;
-        }
-
-        private void OnViewUnRegistered(object sender, EventArgs eventArgs)
-        {
-            Shutdown();
-        }
-
-        protected virtual void Shutdown()
-        {
-            // nothing to do in the base class
-        }
-
         public ICommand GoToPhotoListCommand
         {
-            get { return new MvxRelayCommand(DoGoToPhotoList); }
+            get { return new MvxCommand(DoGoToPhotoList); }
         }
 
 
         public ICommand GoToBluetoothCommand
         {
-            get { return new MvxRelayCommand(DoGoToBluetoothSettings); }
+            get { return new MvxCommand(DoGoToBluetoothSettings); }
         }
 
         private void DoGoToPhotoList()
         {
-            this.RequestNavigate<PhotoListViewModel>();
+            this.ShowViewModel<PhotoListViewModel>();
         }
 
         private void DoGoToBluetoothSettings()
         {
             Cirrious.MvvmCross.Plugins.Settings.PluginLoader.Instance.EnsureLoaded();
-            var settings = this.GetService<ISettings>();
+            var settings = Mvx.Resolve<ISettings>();
             if (settings.CanShow(KnownSettings.Bluetooth))
             {
                 settings.Show(KnownSettings.Bluetooth);

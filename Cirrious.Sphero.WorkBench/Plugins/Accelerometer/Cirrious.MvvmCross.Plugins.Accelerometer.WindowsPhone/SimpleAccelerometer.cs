@@ -8,9 +8,8 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
-using Cirrious.MvvmCross.Exceptions;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.CrossCore.Core;
+using Cirrious.CrossCore.Exceptions;
 using Microsoft.Devices.Sensors;
 
 namespace Cirrious.MvvmCross.Plugins.Accelerometer.WindowsPhone

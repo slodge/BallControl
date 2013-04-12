@@ -7,12 +7,12 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.Plugins.Color;
-using Cirrious.MvvmCross.Wpf.Platform.Converters;
+using Cirrious.CrossCore.UI;
+using Cirrious.MvvmCross.Wpf.Converters;
 
 namespace Cirrious.Sphero.WorkBench.UI.Wpf.NativeConverters
 {
-    public class NativeSimpleColorConverter : MvxNativeValueConverter<MvxSimpleColorConverter>
+    public class NativeSimpleColorConverter : MvxNativeValueConverter<Cirrious.MvvmCross.Plugins.Color.MvxNativeColorValueConverter>
     {
     }
 }

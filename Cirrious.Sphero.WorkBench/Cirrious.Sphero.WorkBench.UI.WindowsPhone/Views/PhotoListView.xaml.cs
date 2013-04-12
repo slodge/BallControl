@@ -40,7 +40,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
         }
     }
 
-    public class BasePhotoListView : MvxPhonePage<PhotoListViewModel>
+    public abstract class BasePhotoListView : MvxPhonePage<PhotoListViewModel>
     {
     }
 }

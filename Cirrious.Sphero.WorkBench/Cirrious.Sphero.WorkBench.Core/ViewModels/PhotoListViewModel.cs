@@ -11,10 +11,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.File;
-using Cirrious.MvvmCross.Plugins.XamPhotos;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 {
@@ -24,8 +23,9 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         public PhotoListViewModel()
         {
-            var photoPicker = this.GetService<IPhotoPicker>();
-            photoPicker.ListPhotoPath(OnPhotoListAvailable);
+#warning Photos removed!
+            //var photoPicker = Mvx.Resolve<IPhotoPicker>();
+            //photoPicker.ListPhotoPath(OnPhotoListAvailable);
         }
 
         private void OnPhotoListAvailable(IList<string> list)
@@ -45,12 +45,12 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
             public ICommand ShareCommand
             {
-                get { return new MvxRelayCommand(() => _parent.DoShare(this)); }
+                get { return new MvxCommand(() => _parent.DoShare(this)); }
             }
 
             public ICommand DeleteCommand
             {
-                get { return new MvxRelayCommand(() => _parent.DoDelete(this)); }
+                get { return new MvxCommand(() => _parent.DoDelete(this)); }
             }
 
             public string Path { get; private set; }
@@ -58,15 +58,16 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         private void DoDelete(PhotoWithCommands photoWithCommands)
         {
-            var file = this.GetService<IMvxSimpleFileStoreService>();
+            var file = Mvx.Resolve<IMvxFileStore>();
             file.DeleteFile(photoWithCommands.Path);
             Photos.Remove(photoWithCommands);
         }
 
         private void DoShare(PhotoWithCommands photoWithCommands)
         {
-            var picker = this.GetService<IPhotoPicker>();
-            picker.Share(photoWithCommands.Path);
+#warning Photos removed!
+            //var picker = Mvx.Resolve<IPhotoPicker>();
+            //picker.Share(photoWithCommands.Path);
         }
 
         public ObservableCollection<PhotoWithCommands> Photos

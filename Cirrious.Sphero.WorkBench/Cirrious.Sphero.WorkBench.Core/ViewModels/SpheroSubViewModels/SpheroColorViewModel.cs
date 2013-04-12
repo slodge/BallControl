@@ -7,7 +7,7 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.Plugins.Color;
+using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.Plugins.Sphero.Commands;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 

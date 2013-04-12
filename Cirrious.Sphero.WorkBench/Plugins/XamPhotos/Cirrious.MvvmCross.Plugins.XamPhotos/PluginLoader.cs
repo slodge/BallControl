@@ -7,15 +7,15 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.Plugins;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
+
+
 
 namespace Cirrious.MvvmCross.Plugins.XamPhotos
 {
     public class PluginLoader
         : IMvxPluginLoader
-          , IMvxServiceConsumer<IMvxPluginManager>
+          
     {
         public static readonly PluginLoader Instance = new PluginLoader();
 
@@ -23,7 +23,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos
 
         public void EnsureLoaded()
         {
-            var manager = this.GetService();
+            var manager = Mvx.Resolve();
             manager.EnsureLoaded<PluginLoader>();
         }
 

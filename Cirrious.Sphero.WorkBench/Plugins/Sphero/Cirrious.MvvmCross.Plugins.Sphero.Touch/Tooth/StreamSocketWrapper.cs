@@ -12,8 +12,7 @@ using System.Threading.Tasks;
 using Cirrious.MvvmCross.Plugins.Sphero.HackFileShare;
 using MonoTouch.ExternalAccessory;
 using MonoTouch.Foundation;
-using Cirrious.MvvmCross.Platform.Diagnostics;
-using Cirrious.MvvmCross.ExtensionMethods;
+
 using System.Threading;
 
 namespace Cirrious.MvvmCross.Plugins.Sphero.Touch.Tooth

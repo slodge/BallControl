@@ -12,20 +12,19 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.File;
 
 namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.NativeConverters
 {
-    public class PathToImageConverter : IValueConverter, IMvxServiceConsumer
+    public class PathToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             byte[] contents = null;
             try
             {
-                var file = this.GetService<IMvxSimpleFileStoreService>();
+                var file = Mvx.Resolve<IMvxFileStore>();
                 file.TryReadBinaryFile((string) value, out contents);
             }
             catch (Exception)

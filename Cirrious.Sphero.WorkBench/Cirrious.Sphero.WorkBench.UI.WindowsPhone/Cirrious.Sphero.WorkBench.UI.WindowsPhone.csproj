@@ -47,48 +47,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>Bin\x86\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>Bin\x86\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -180,6 +138,7 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Assets\Music\MusicLicense.txt" />
     <Content Include="Assets\Music\Tony_Warrior_reggaeton_pop1.mp3" />
     <Content Include="Assets\SpheroIcon100.png" />
     <Content Include="Assets\steeringwheel400.png" />
@@ -228,6 +187,10 @@
       <Project>{B81C8F9A-FE2C-4807-90BA-D34CB25D8CE6}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Accelerometer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech\Cirrious.MvvmCross.Plugins.Speech.csproj">
+      <Project>{333CC951-D5D1-4DD5-AC37-06C6790BB0CF}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.Speech</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
       <Project>{5400CDE5-AD8A-408A-AEA7-FDDF9BF76AEF}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
@@ -248,54 +211,65 @@
       <Project>{F6CFFC44-747E-4657-9D1D-ED0D70A95E02}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero.WindowsPhone</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone\Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone.csproj">
-      <Project>{A83D4B7D-8EF4-4A10-997A-B07BF2F02E3E}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.WindowsPhone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{FF37BE9C-CF12-4994-9E15-1B3C07D7B68B}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.WindowsPhone">
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.CrossCore.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Color.WindowsPhone">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.Color.WindowsPhone.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.Color.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File.WindowsPhone">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.File.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.File.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Json">
-      <HintPath>..\..\MVVMCROSS\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.WindowsPhone">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.ResourceLoader.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Share, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Share.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Share.WindowsPhone">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.Share.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.Share.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.Visibility.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone">
-      <HintPath>..\..\MvvmCross\bin\WindowsPhone\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.Plugins.WebBrowser.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
-      <HintPath>..\..\MVVMCROSS\bin\WindowsPhone\Debug\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsPhone\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">

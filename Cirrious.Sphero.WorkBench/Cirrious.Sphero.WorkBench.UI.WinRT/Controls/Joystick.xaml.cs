@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Cirrious.CrossCore.Core;
 using Cirrious.MvvmCross.Platform;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
 using Windows.Foundation;

@@ -12,12 +12,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Platform;
-using Cirrious.MvvmCross.Plugins.Color;
+using Cirrious.CrossCore.Core;
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.Plugins.Speech;
 using Cirrious.MvvmCross.Plugins.Sphero.Commands;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 {
@@ -32,7 +32,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
             : base(parent)
         {
             Cirrious.MvvmCross.Plugins.Speech.PluginLoader.Instance.EnsureLoaded();
-            SpeechAvailable = this.TryGetService(out _speechListener);
+            SpeechAvailable = Mvx.TryResolve(out _speechListener);
             if (_speechListener != null)
             {
                 BuildActions();
@@ -102,7 +102,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         public ICommand EnsureSpeechIsOn
         {
-            get { return new MvxRelayCommand<bool>(DoEnsureSpeechIs); }
+            get { return new MvxCommand<bool>(DoEnsureSpeechIs); }
         }
 
         private void DoEnsureSpeechIs(bool on)

@@ -81,19 +81,19 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="Cirrious.MvvmCross.Binding.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Dialog.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Dialog.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Dialog.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.Color.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.Color.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Touch.dll</HintPath>
     </Reference>
     <Reference Include="CrossUI.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\CrossUI.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\CrossUI.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
       <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
@@ -111,22 +111,22 @@
       <HintPath>..\..\MvvmCross\bin\Portable\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugin.Visibility.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugin.Visibility.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugin.Visibility.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.ResourceLoader.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Share.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.Share.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.Share.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.WebBrowser.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.File.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.File.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache.Touch">
-      <HintPath>..\..\MvvmCross\bin\Touch\Debug\Cirrious.MvvmCross.Plugins.DownloadCache.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.DownloadCache.Touch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

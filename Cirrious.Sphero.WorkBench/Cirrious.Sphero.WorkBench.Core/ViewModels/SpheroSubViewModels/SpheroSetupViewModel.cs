@@ -8,7 +8,6 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.Plugins.Sphero.Commands;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels

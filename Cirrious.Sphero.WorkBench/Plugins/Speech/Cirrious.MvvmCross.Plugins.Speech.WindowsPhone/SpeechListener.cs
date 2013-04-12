@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.CrossCore.Core;
 using Windows.Phone.Speech.Recognition;
 
 namespace Cirrious.MvvmCross.Plugins.Speech.WindowsPhone

@@ -12,7 +12,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
-using Cirrious.MvvmCross.Plugins.Color;
+using System.Windows.Navigation;
+using Cirrious.CrossCore.UI;
 using Cirrious.MvvmCross.Plugins.Sphero.Commands;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.MvvmCross.WindowsPhone.Views;
@@ -46,6 +47,13 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
                 played = true;
                 var task = Dance();
             }
+        }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            if (e.NavigationMode == NavigationMode.Back)
+                ViewModel.Shutdown();
         }
 
         private void ApplicationBarIconButton_Bluetooth_OnClick(object sender, EventArgs e)
@@ -260,7 +268,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
         }
     }
 
-    public class BaseGangnamStyleView : MvxPhonePage<GangnamStyleViewModel>
+    public abstract class BaseGangnamStyleView : MvxPhonePage<GangnamStyleViewModel>
     {
     }
 }

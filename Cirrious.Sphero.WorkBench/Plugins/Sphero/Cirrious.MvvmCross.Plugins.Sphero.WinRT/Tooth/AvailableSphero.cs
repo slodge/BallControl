@@ -8,7 +8,6 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System;
-using Cirrious.MvvmCross.Exceptions;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Windows.Networking.Proximity;
 using Windows.Networking.Sockets;

@@ -7,22 +7,22 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.Plugins;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
+
+
 
 namespace Cirrious.MvvmCross.Plugins.XamPhotos.Touch
 {
     public class Plugin
         : IMvxPlugin
-          , IMvxServiceProducer
+          
     {
         #region Implementation of IMvxPlugin
 
         public void Load()
         {
 			// we do nothing for now
-            //this.RegisterServiceInstance<IPhotoPicker>(new PhotoPicker());
+            //Mvx.RegisterSingleton<IPhotoPicker>(new PhotoPicker());
         }
 
         #endregion

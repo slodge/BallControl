@@ -79,7 +79,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
         }
     }
 
-    public class BaseHomeView : MvxPhonePage<HomeViewModel>
+    public abstract class BaseHomeView : MvxPhonePage<HomeViewModel>
     {
     }
 }

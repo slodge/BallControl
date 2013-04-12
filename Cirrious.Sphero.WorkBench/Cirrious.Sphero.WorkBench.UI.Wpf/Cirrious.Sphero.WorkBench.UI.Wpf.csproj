@@ -37,41 +37,53 @@
     <StartupObject>Cirrious.Sphero.WorkBench.UI.Wpf.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color.Wpf">
-      <HintPath>..\..\MvvmCross\bin\Wpf\Debug\Cirrious.MvvmCross.Plugins.Color.Wpf.dll</HintPath>
+      <HintPath>..\..\Mvx\Wpf\Cirrious.MvvmCross.Plugins.Color.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File.Wpf">
-      <HintPath>..\..\MvvmCross\bin\Wpf\Debug\Cirrious.MvvmCross.Plugins.File.Wpf.dll</HintPath>
+      <HintPath>..\..\Mvx\Wpf\Cirrious.MvvmCross.Plugins.File.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Json">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.JsonLocalisation">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.JsonLocalisation.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.JsonLocalisation.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Wpf">
-      <HintPath>..\..\MvvmCross\bin\Wpf\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.Wpf.dll</HintPath>
+      <HintPath>..\..\Mvx\Wpf\Cirrious.MvvmCross.Plugins.ResourceLoader.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Share">
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Share.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Share.Wpf">
-      <HintPath>..\..\MvvmCross\bin\Wpf\Debug\Cirrious.MvvmCross.Plugins.Share.Wpf.dll</HintPath>
+      <HintPath>..\..\Mvx\Wpf\Cirrious.MvvmCross.Plugins.Share.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Wpf">
-      <HintPath>..\..\MvvmCross\bin\Wpf\Debug\Cirrious.MvvmCross.Plugins.Visibility.Wpf.dll</HintPath>
+      <HintPath>..\..\Mvx\Wpf\Cirrious.MvvmCross.Plugins.Visibility.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Wpf">
-      <HintPath>..\..\MvvmCross\bin\Wpf\Debug\Cirrious.MvvmCross.Wpf.dll</HintPath>
+      <HintPath>..\..\Mvx\Wpf\Cirrious.MvvmCross.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\MvvmCross\bin\Portable\Debug\Newtonsoft.Json.dll</HintPath>
@@ -191,14 +203,6 @@
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
       <Project>{5400cde5-ad8a-408a-aea7-fddf9bf76aef}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.Wpf\Cirrious.MvvmCross.Plugins.XamPhotos.Wpf.csproj">
-      <Project>{837f1690-d014-438c-be95-5cfb72f00e0f}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.Wpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{ff37be9c-cf12-4994-9e15-1b3c07d7b68b}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

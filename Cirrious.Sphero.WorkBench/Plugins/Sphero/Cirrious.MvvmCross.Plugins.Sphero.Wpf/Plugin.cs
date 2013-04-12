@@ -7,25 +7,20 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.Plugins;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.Plugins;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.MvvmCross.Plugins.Sphero.Wpf.Tooth;
 
 namespace Cirrious.MvvmCross.Plugins.Sphero.Wpf
 {
     public class Plugin
-        : IMvxPlugin
-          , IMvxServiceProducer
+        : IMvxPlugin        
     {
-        #region Implementation of IMvxPlugin
-
         public void Load()
         {
-            this.RegisterServiceInstance<ISpheroFinder>(new SpheroFinder());
+            Mvx.RegisterSingleton<ISpheroFinder>(new SpheroFinder());
         }
-
-        #endregion
     }
 }

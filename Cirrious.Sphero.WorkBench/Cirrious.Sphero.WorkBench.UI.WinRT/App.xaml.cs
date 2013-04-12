@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
-using Cirrious.MvvmCross.Interfaces.ViewModels;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -25,7 +24,6 @@ namespace Cirrious.Sphero.WorkBench.UI.WinRT
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
-        , IMvxServiceConsumer
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -71,7 +69,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WinRT
                 var setup = new Setup(rootFrame);
                 setup.Initialize();
 
-                var start = this.GetService<IMvxStartNavigation>();
+                var start = Mvx.Resolve<IMvxAppStart>();
                 start.Start();
             }
             // Ensure the current window is active

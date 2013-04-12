@@ -9,14 +9,15 @@
 
 using System;
 using System.Collections.Generic;
+using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.Interfaces.Platform.Diagnostics;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
 using Cirrious.MvvmCross.Platform.Diagnostics;
 using Xamarin.Media;
 
 namespace Cirrious.MvvmCross.Plugins.XamPhotos.WinRT
 {
-    public class PhotoPicker : IPhotoPicker, IMvxServiceConsumer
+    public class PhotoPicker : IPhotoPicker
     {
         public PhotoPicker()
         {
@@ -46,7 +47,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos.WinRT
                               return;
 
 #warning Code to do...
-                          //var file = this.GetService<IMvxSimpleFileStoreService>();
+                          //var file = Mvx.Resolve<IMvxSimpleFileStoreService>();
                           //file.WriteFile(t.Result.Path, stream => t.Result.GetStream().CopyTo(stream));
                           //file.WriteFile("Test.txt", "Some text");
                           onPhotoTaken(t.Result.Path);
@@ -75,7 +76,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos.WinRT
         {
 #warning Code to do...
             /*
-            var file = this.GetService<IMvxSimpleFileStoreService>();
+            var file = Mvx.Resolve<IMvxSimpleFileStoreService>();
             using (var ms = new MemoryStream())
             {
                 file.TryReadBinaryFile(path, stream =>

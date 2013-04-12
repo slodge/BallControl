@@ -43,57 +43,63 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Mvx\Droid\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\..\Mvx\Droid\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\Cirrious.Sphero.WorkBench.Core\bin\Debug\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Binding.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding.Android">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Binding.Android.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Droid">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Droid.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color.Droid">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Color.Droid.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.Color.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File.Droid">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.File.Droid.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.File.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Droid">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Share.Droid">
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.Share.Droid.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.Share.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Droid">
-      <HintPath>..\..\MvvmCross\bin\Droid\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\System.Net.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\System.Net.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MVVMCROSS\bin\Droid\Debug\System.Windows.dll</HintPath>
+      <HintPath>..\..\Mvx\Droid\System.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
@@ -152,7 +158,9 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
+    <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cirrious.Sphero.WorkBench.Core\Cirrious.Sphero.WorkBench.Core.csproj">
@@ -182,14 +190,6 @@
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.Droid\Cirrious.MvvmCross.Plugins.Sphero.Droid.csproj">
       <Project>{f6e7685e-7089-4291-b58d-5148e870698e}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.Droid\Cirrious.MvvmCross.Plugins.XamPhotos.Droid.csproj">
-      <Project>{d8b53c82-6d87-423d-9b3a-8b38b2ab6875}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{ff37be9c-cf12-4994-9e15-1b3c07d7b68b}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

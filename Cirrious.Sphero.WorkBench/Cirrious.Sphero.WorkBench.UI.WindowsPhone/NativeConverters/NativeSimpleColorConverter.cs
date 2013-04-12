@@ -7,12 +7,13 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
+using Cirrious.CrossCore.UI;
+using Cirrious.CrossCore.WindowsPhone.Converters;
 using Cirrious.MvvmCross.Plugins.Color;
-using Cirrious.MvvmCross.WindowsPhone.Platform.Converters;
 
 namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.NativeConverters
 {
-    public class NativeSimpleColorConverter : MvxNativeValueConverter<MvxSimpleColorConverter>
+    public class NativeSimpleColorConverter : MvxNativeValueConverter<MvxNativeColorValueConverter>
     {
     }
 }

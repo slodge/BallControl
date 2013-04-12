@@ -9,25 +9,31 @@
 
 using Android.App;
 using Cirrious.MvvmCross.Binding.Droid.Views;
+using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.MvvmCross.Plugins.Color.Droid;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
 
 namespace Cirrious.Sphero.WorkBench.UI.Droid.Views.SpheroSubViews
 {
     [Activity]
-    public class SpheroColorView : MvxBindingActivityView<SpheroColorViewModel>
+    public class SpheroColorView : MvxActivity
     {
+        protected SpheroColorViewModel SpheroColorViewModel
+        {
+            get { return base.ViewModel as SpheroColorViewModel; }
+        }
+
         protected override void OnViewModelSet()
         {
             SetContentView(Resource.Layout.ChildPage_SpheroColorView);
 
             // TODO - should do this color setting via databinding
             var view = FindViewById(Resource.Id.ShowCurrentColor);
-            ViewModel.PropertyChanged += (sender, args) =>
+            SpheroColorViewModel.PropertyChanged += (sender, args) =>
                 {
                     if (args.PropertyName == "Color")
                     {
-                        view.SetBackgroundColor(ViewModel.Color.ToAndroidColor());
+                        view.SetBackgroundColor(SpheroColorViewModel.Color.ToAndroidColor());
                     }
                 };
         }

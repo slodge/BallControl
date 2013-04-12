@@ -18,7 +18,7 @@
       android:layout_margin="20dp"
       android:background="#ff0000"
       android:progressDrawable="@drawable/redprogress"
-      local:MvxBind="{'Progress':{'Path':'Red'}}"
+      local:MvxBind="Progress Red"
         />
     <SeekBar
       android:max="255"
@@ -27,7 +27,7 @@
       android:layout_width="fill_parent"
       android:layout_margin="20dp"
       android:background="#00ff00"
-      local:MvxBind="{'Progress':{'Path':'Green'}}"
+      local:MvxBind="Progress Green"
         />
     <SeekBar
       android:max="255"
@@ -36,7 +36,7 @@
       android:progressDrawable="@drawable/blueprogress"
       android:layout_margin="20dp"
       android:background="#0000ff"
-      local:MvxBind="{'Progress':{'Path':'Blue'}}"
+      local:MvxBind="Progress Blue"
         />
     <FrameLayout
       android:id="@+id/ShowCurrentColor"

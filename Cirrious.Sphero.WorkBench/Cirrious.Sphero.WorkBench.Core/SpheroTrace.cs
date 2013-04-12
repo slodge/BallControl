@@ -7,7 +7,8 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.Platform.Diagnostics;
+
+using Cirrious.CrossCore.Platform;
 
 namespace Cirrious.Sphero.WorkBench.Core
 {

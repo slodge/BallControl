@@ -9,12 +9,13 @@
 
 using Android.App;
 using Cirrious.MvvmCross.Binding.Droid.Views;
+using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
 
 namespace Cirrious.Sphero.WorkBench.UI.Droid.Views.SpheroSubViews
 {
     [Activity]
-    public class SpheroAccelMovementView : MvxBindingActivityView<SpheroAccelMovementViewModel>
+    public class SpheroAccelMovementView : MvxActivity
     {
         protected override void OnViewModelSet()
         {

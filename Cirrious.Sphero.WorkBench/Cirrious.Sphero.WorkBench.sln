@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Sphero.Droid", "Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.Droid\Cirrious.MvvmCross.Plugins.Sphero.Droid.csproj", "{F6E7685E-7089-4291-B58D-5148E870698E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Sphero.WinRT", "Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.WinRT\Cirrious.MvvmCross.Plugins.Sphero.WinRT.csproj", "{ADA796C3-BE91-462C-A9D0-5B0203449CEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Sphero.WindowsStore", "Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.WinRT\Cirrious.MvvmCross.Plugins.Sphero.WindowsStore.csproj", "{ADA796C3-BE91-462C-A9D0-5B0203449CEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Sphero.Touch", "Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.Touch\Cirrious.MvvmCross.Plugins.Sphero.Touch.csproj", "{FC2F0606-5A10-411A-B622-E7D39DA34D2B}"
 EndProject
@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Accelerometer.Droid", "Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.Droid\Cirrious.MvvmCross.Plugins.Accelerometer.Droid.csproj", "{1BA31472-796C-4407-9183-5F3C29E5B0C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Accelerometer.WinRT", "Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.WinRT\Cirrious.MvvmCross.Plugins.Accelerometer.WinRT.csproj", "{87C31E67-3DED-43A7-982D-B108C45CA0AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Accelerometer.WindowsStore", "Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.WinRT\Cirrious.MvvmCross.Plugins.Accelerometer.WindowsStore.csproj", "{87C31E67-3DED-43A7-982D-B108C45CA0AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Accelerometer.Touch", "Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.Touch\Cirrious.MvvmCross.Plugins.Accelerometer.Touch.csproj", "{ED445165-3EBC-4474-8178-A2C3A41A18FD}"
 EndProject
@@ -55,7 +55,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Speech.WindowsPhone", "Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.WindowsPhone\Cirrious.MvvmCross.Plugins.Speech.WindowsPhone.csproj", "{CE462166-B428-4411-A6C8-3109678433AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Speech.WinRT", "Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.WinRT\Cirrious.MvvmCross.Plugins.Speech.WinRT.csproj", "{921BDF97-B1EE-4E11-89F5-24663E9D4935}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Speech.WindowsStore", "Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.WinRT\Cirrious.MvvmCross.Plugins.Speech.WindowsStore.csproj", "{921BDF97-B1EE-4E11-89F5-24663E9D4935}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Speech.Touch", "Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.Touch\Cirrious.MvvmCross.Plugins.Speech.Touch.csproj", "{5191B53A-B399-49E0-BCF5-2087BE820E59}"
 EndProject
@@ -67,7 +67,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Settings.Droid", "Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.Droid\Cirrious.MvvmCross.Plugins.Settings.Droid.csproj", "{F98C9E31-75C3-4E33-B916-9439139EDDA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Settings.WinRT", "Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.WinRT\Cirrious.MvvmCross.Plugins.Settings.WinRT.csproj", "{D798AC60-D518-421D-BC5A-DA86F3B7F934}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Settings.WindowsStore", "Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.WinRT\Cirrious.MvvmCross.Plugins.Settings.WindowsStore.csproj", "{D798AC60-D518-421D-BC5A-DA86F3B7F934}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.Settings.Touch", "Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.Touch\Cirrious.MvvmCross.Plugins.Settings.Touch.csproj", "{16340A6B-4C48-462B-B75B-B61DD4DB3052}"
 EndProject

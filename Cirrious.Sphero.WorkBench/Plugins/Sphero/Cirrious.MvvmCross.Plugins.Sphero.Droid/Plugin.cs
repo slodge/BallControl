@@ -7,9 +7,9 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.Plugins;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.Plugins;
 using Cirrious.MvvmCross.Plugins.Sphero.Droid.Tooth;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 
@@ -17,13 +17,13 @@ namespace Cirrious.MvvmCross.Plugins.Sphero.Droid
 {
     public class Plugin
         : IMvxPlugin
-          , IMvxServiceProducer
+          
     {
         #region Implementation of IMvxPlugin
 
         public void Load()
         {
-            this.RegisterServiceInstance<ISpheroFinder>(new SpheroFinder());
+            Mvx.RegisterSingleton<ISpheroFinder>(new SpheroFinder());
         }
 
         #endregion

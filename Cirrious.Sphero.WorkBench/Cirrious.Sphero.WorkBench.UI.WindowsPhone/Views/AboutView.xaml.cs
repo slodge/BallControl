@@ -34,7 +34,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
         }
     }
 
-    public class BaseAboutView : MvxPhonePage<AboutViewModel>
-    {
+    public abstract class BaseAboutView : MvxPhonePage<AboutViewModel>
+    { 
     }
 }

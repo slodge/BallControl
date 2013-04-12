@@ -8,9 +8,9 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
+using Cirrious.MvvmCross.ViewModels;
 using Cirrious.Sphero.WorkBench.Core.Interfaces;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels
@@ -21,7 +21,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         public HomeViewModel()
         {
-            _listService = this.GetService<ISpheroListService>();
+            _listService = Mvx.Resolve<ISpheroListService>();
         }
 
         public ISpheroListService ListService
@@ -31,22 +31,22 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         public ICommand RefreshListCommand
         {
-            get { return new MvxRelayCommand(DoRefreshList); }
+            get { return new MvxCommand(DoRefreshList); }
         }
 
         public ICommand GoToSpheroCommand
         {
-            get { return new MvxRelayCommand<IAvailableSphero>(DoGoToSphero); }
+            get { return new MvxCommand<IAvailableSphero>(DoGoToSphero); }
         }
 
         public ICommand GoToAboutCommand
         {
-            get { return new MvxRelayCommand(() => RequestNavigate<AboutViewModel>()); }
+            get { return new MvxCommand(() => ShowViewModel<AboutViewModel>()); }
         }
 
         public ICommand GoToGangnamStyleCommand
         {
-            get { return new MvxRelayCommand(() => RequestNavigate<GangnamStyleViewModel>()); }
+            get { return new MvxCommand(() => ShowViewModel<GangnamStyleViewModel>()); }
         }
 
         private void DoRefreshList()
@@ -56,7 +56,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         private void DoGoToSphero(IAvailableSphero sphero)
         {
-            this.RequestNavigate<SpheroViewModel>(new {name = sphero.Name});
+            this.ShowViewModel<SpheroViewModel>(new {name = sphero.Name});
         }
     }
 }

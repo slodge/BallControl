@@ -7,23 +7,17 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.Plugins;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.Plugins;
 
 namespace Cirrious.MvvmCross.Plugins.Settings.WindowsPhone
 {
     public class Plugin
         : IMvxPlugin
-          , IMvxServiceProducer
     {
-        #region Implementation of IMvxPlugin
-
         public void Load()
         {
-            this.RegisterServiceInstance<ISettings>(new Settings());
+            Mvx.RegisterSingleton<ISettings>(new Settings());
         }
-
-        #endregion
     }
 }

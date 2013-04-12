@@ -8,7 +8,7 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 {
@@ -21,7 +21,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         public ICommand RollCommand
         {
-            get { return new MvxRelayCommand<CartesianPositionParameters>(DoRoll); }
+            get { return new MvxCommand<CartesianPositionParameters>(DoRoll); }
         }
 
 
@@ -31,27 +31,27 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels
 
         public ICommand LeftCommand
         {
-            get { return new MvxRelayCommand(DoSpinLeft); }
+            get { return new MvxCommand(DoSpinLeft); }
         }
 
         public ICommand RightCommand
         {
-            get { return new MvxRelayCommand(DoSpinRight); }
+            get { return new MvxCommand(DoSpinRight); }
         }
 
         public ICommand StopCommand
         {
-            get { return new MvxRelayCommand(DoStop); }
+            get { return new MvxCommand(DoStop); }
         }
 
         public ICommand ForwardsCommand
         {
-            get { return new MvxRelayCommand(DoForwards); }
+            get { return new MvxCommand(DoForwards); }
         }
 
         public ICommand BackwardsCommand
         {
-            get { return new MvxRelayCommand(DoBackwards); }
+            get { return new MvxCommand(DoBackwards); }
         }
 
 

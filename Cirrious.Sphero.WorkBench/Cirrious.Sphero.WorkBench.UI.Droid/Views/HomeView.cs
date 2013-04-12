@@ -9,12 +9,13 @@
 
 using Android.App;
 using Cirrious.MvvmCross.Binding.Droid.Views;
+using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.UI.Droid.Views
 {
     [Activity(Label = "Ball Control")]
-    public class HomeView : MvxBindingActivityView<HomeViewModel>
+    public class HomeView : MvxActivity
     {
         protected override void OnViewModelSet()
         {

@@ -9,7 +9,7 @@
 
 using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.Sphero.WorkBench.Core.Interfaces;
@@ -40,7 +40,7 @@ namespace Cirrious.Sphero.WorkBench.Core.Services
                 IsRefreshing = true;
             }
 
-            var finder = this.GetService<ISpheroFinder>();
+            var finder = Mvx.Resolve<ISpheroFinder>();
             finder.Find(OnFindSuccess, OnFindError);
         }
 

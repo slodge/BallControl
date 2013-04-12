@@ -7,23 +7,18 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Cirrious.MvvmCross.Interfaces.Plugins;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
+using Cirrious.CrossCore.Plugins;
 
 namespace Cirrious.MvvmCross.Plugins.Speech.Wpf
 {
     public class Plugin
-        : IMvxPlugin
-          , IMvxServiceProducer
+        : IMvxPlugin          
     {
-        #region Implementation of IMvxPlugin
-
         public void Load()
         {
             // TODO - register speech here?
-            // this.RegisterServiceInstance<ISpheroFinder>(new SpheroFinder());
+            // Mvx.RegisterSingleton<ISpheroFinder>(new SpheroFinder());
         }
-
-        #endregion
     }
 }

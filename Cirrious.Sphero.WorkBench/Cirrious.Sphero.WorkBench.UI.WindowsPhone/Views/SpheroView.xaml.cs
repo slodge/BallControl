@@ -17,7 +17,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using System.Windows.Threading;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore.Core;
 using Cirrious.MvvmCross.Platform;
 using Cirrious.MvvmCross.Plugins.File;
 using Cirrious.MvvmCross.WindowsPhone.Views;
@@ -112,6 +112,13 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             _hackTimer.Start();
             RefreshSpecialPivots();
             Dispatcher.BeginInvoke(StartCameraAsync);
+        }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            if (e.NavigationMode == NavigationMode.Back)
+                ViewModel.Shutdown();
         }
 
         private async void StartCameraAsync()
@@ -330,7 +337,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
 
         private void CopyAndNavigate(bool navigate)
         {
-            var file = this.GetService<IMvxSimpleFileStoreService>();
+            var file = Mvx.Resolve<IMvxSimpleFileStoreService>();
             using (var ms = new MemoryStream())
             {
                 file.TryReadBinaryFile(_videoPath, stream =>
@@ -364,7 +371,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
 */ 
     }
 
-    public class BaseSpheroView : MvxPhonePage<SpheroViewModel>
+    public abstract class BaseSpheroView : MvxPhonePage<SpheroViewModel>
     {
     }
 }

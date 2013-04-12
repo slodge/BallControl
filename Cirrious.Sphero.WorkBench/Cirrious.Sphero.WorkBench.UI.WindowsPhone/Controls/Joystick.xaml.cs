@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Threading;
+using Cirrious.CrossCore.Core;
 using Cirrious.MvvmCross.Platform;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
 using Microsoft.Phone.Controls;

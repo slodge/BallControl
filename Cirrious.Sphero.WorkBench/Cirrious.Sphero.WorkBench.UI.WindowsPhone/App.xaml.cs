@@ -14,9 +14,8 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Navigation;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
-using Cirrious.MvvmCross.Interfaces.ViewModels;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
 using Cirrious.Sphero.WorkBench.UI.WindowsPhone.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -25,7 +24,6 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone
 {
     public partial class App
         : Application
-          , IMvxServiceConsumer
     {
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -90,7 +88,7 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone
             navigatingCancelEventArgs.Cancel = true;
             RootFrame.Dispatcher.BeginInvoke(() =>
                 {
-                    var start = this.GetService<IMvxStartNavigation>();
+                    var start = Mvx.Resolve<IMvxAppStart>();
                     start.Start();
                 });
         }

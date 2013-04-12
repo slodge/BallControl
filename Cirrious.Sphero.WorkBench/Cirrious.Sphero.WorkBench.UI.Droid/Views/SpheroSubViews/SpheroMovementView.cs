@@ -9,21 +9,25 @@
 
 using Android.App;
 using Cirrious.MvvmCross.Binding.Droid.Views;
+using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
 using Cirrious.Sphero.WorkBench.UI.Droid.Controls;
 
 namespace Cirrious.Sphero.WorkBench.UI.Droid.Views.SpheroSubViews
 {
     [Activity]
-    public class SpheroMovementView : MvxBindingActivityView<SpheroMovementViewModel>
+    public class SpheroMovementView : MvxActivity
     {
+        protected SpheroMovementViewModel SpheroMovementViewModel
+        { get { return ViewModel as SpheroMovementViewModel; } }
+
         protected override void OnViewModelSet()
         {
             SetContentView(Resource.Layout.ChildPage_SpheroMovementView);
 
             var touch = this.FindViewById<MovementTrackingTouchView>(Resource.Id.TouchView);
-            touch.TouchEnd += (sender, args) => ViewModel.RollCommand.Execute(new CartesianPositionParameters());
-            touch.TouchPositionChanged += (sender, args) => ViewModel.RollCommand.Execute(touch.TouchPosition);
+            touch.TouchEnd += (sender, args) => SpheroMovementViewModel.RollCommand.Execute(new CartesianPositionParameters());
+            touch.TouchPositionChanged += (sender, args) => SpheroMovementViewModel.RollCommand.Execute(touch.TouchPosition);
         }
     }
 }

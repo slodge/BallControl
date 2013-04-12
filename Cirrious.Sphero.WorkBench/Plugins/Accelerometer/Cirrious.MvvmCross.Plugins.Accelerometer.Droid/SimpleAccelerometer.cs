@@ -10,11 +10,10 @@
 using System;
 using Android.Content;
 using Android.Hardware;
-using Cirrious.MvvmCross.Droid.Interfaces;
-using Cirrious.MvvmCross.Exceptions;
-using Cirrious.MvvmCross.ExtensionMethods;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.CrossCore.Core;
+using Cirrious.CrossCore.Droid;
+using Cirrious.CrossCore.Exceptions;
+using Cirrious.CrossCore;
 
 namespace Cirrious.MvvmCross.Plugins.Accelerometer.Droid
 {
@@ -22,7 +21,6 @@ namespace Cirrious.MvvmCross.Plugins.Accelerometer.Droid
         : Java.Lang.Object
           , ISensorEventListener
           , ISimpleAccelerometer
-          , IMvxServiceConsumer
     {
         private Sensor _accelerometer;
         private SensorManager _sensorManager;
@@ -34,7 +32,7 @@ namespace Cirrious.MvvmCross.Plugins.Accelerometer.Droid
                 throw new MvxException("Accelerometer already started");
             }
 
-            var globals = this.GetService<IMvxAndroidGlobals>();
+            var globals = Mvx.Resolve<IMvxAndroidGlobals>();
             _sensorManager = (SensorManager) globals.ApplicationContext.GetSystemService(Context.SensorService);
             if (_sensorManager == null)
                 throw new MvxException("Failed to find SensorManager");

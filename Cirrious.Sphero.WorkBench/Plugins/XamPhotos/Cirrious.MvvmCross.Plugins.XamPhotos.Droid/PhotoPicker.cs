@@ -10,9 +10,9 @@
 using System;
 using System.Collections.Generic;
 using Cirrious.MvvmCross.Droid.Interfaces;
-using Cirrious.MvvmCross.ExtensionMethods;
+
 using Cirrious.MvvmCross.Interfaces.Platform.Diagnostics;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+
 using Cirrious.MvvmCross.Platform.Diagnostics;
 using Xamarin.Media;
 
@@ -31,7 +31,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos.Droid
 
         public void TakeAndStorePhoto(Action<string> onPhotoTaken)
         {
-            var currentActivityService = this.GetService<IMvxAndroidCurrentTopActivity>();
+            var currentActivityService = Mvx.Resolve<IMvxAndroidCurrentTopActivity>();
             var currentActivity = currentActivityService.Activity;
 
             var picker = new MediaPicker(currentActivity);
@@ -60,7 +60,7 @@ namespace Cirrious.MvvmCross.Plugins.XamPhotos.Droid
         {
             // TODO - list in PictureFolder
             throw new NotImplementedException("TODO");
-            //this.GetService<>()
+            //Mvx.Resolve<>()
         }
 
         public void Share(string path)

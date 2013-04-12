@@ -177,51 +177,60 @@
     <Reference Include="Callisto">
       <HintPath>..\packages\Callisto.1.2.5\lib\winrt45\Callisto.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.CrossCore.WindowsStore.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.Plugins.Color.WinRT.dll</HintPath>
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.Plugins.Color.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.File.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.Plugins.File.WinRT.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.Plugins.File.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Json">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.Plugins.ResourceLoader.WinRT.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.Plugins.ResourceLoader.WindowsStore.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Share.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.Plugins.Share.WinRT.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Share">
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Share.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.Plugins.Share.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.Plugins.Visibility.WinRT.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.Plugins.Visibility.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.Plugins.WebBrowser.WinRT.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.Plugins.WebBrowser.WindowsStore.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.WinRT">
-      <HintPath>..\..\MvvmCross\bin\WinRT\Debug\Cirrious.MvvmCross.WinRT.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.WindowsStore">
+      <HintPath>..\..\Mvx\WindowsStore\Cirrious.MvvmCross.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -229,45 +238,37 @@
       <Project>{066482e7-a44c-4911-b983-e3a5e41cfb7c}</Project>
       <Name>Cirrious.Sphero.WorkBench.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.WinRT\Cirrious.MvvmCross.Plugins.Accelerometer.WinRT.csproj">
+    <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.WinRT\Cirrious.MvvmCross.Plugins.Accelerometer.WindowsStore.csproj">
       <Project>{87c31e67-3ded-43a7-982d-b108c45ca0ad}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.Accelerometer.WinRT</Name>
+      <Name>Cirrious.MvvmCross.Plugins.Accelerometer.WindowsStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer\Cirrious.MvvmCross.Plugins.Accelerometer.csproj">
       <Project>{b81c8f9a-fe2c-4807-90ba-d34cb25d8ce6}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Accelerometer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.WinRT\Cirrious.MvvmCross.Plugins.Settings.WinRT.csproj">
+    <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings.WinRT\Cirrious.MvvmCross.Plugins.Settings.WindowsStore.csproj">
       <Project>{d798ac60-d518-421d-bc5a-da86f3b7f934}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.Settings.WinRT</Name>
+      <Name>Cirrious.MvvmCross.Plugins.Settings.WindowsStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Settings\Cirrious.MvvmCross.Plugins.Settings\Cirrious.MvvmCross.Plugins.Settings.csproj">
       <Project>{178f162f-3d32-48ea-8894-49949e58495e}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.WinRT\Cirrious.MvvmCross.Plugins.Speech.WinRT.csproj">
+    <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech.WinRT\Cirrious.MvvmCross.Plugins.Speech.WindowsStore.csproj">
       <Project>{921bdf97-b1ee-4e11-89f5-24663e9d4935}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.Speech.WinRT</Name>
+      <Name>Cirrious.MvvmCross.Plugins.Speech.WindowsStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Speech\Cirrious.MvvmCross.Plugins.Speech\Cirrious.MvvmCross.Plugins.Speech.csproj">
       <Project>{333cc951-d5d1-4dd5-ac37-06c6790bb0cf}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Speech</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.WinRT\Cirrious.MvvmCross.Plugins.Sphero.WinRT.csproj">
+    <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.WinRT\Cirrious.MvvmCross.Plugins.Sphero.WindowsStore.csproj">
       <Project>{ada796c3-be91-462c-a9d0-5b0203449cec}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.Sphero.WinRT</Name>
+      <Name>Cirrious.MvvmCross.Plugins.Sphero.WindowsStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero\Cirrious.MvvmCross.Plugins.Sphero.csproj">
       <Project>{5400cde5-ad8a-408a-aea7-fddf9bf76aef}</Project>
       <Name>Cirrious.MvvmCross.Plugins.Sphero</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{ff37be9c-cf12-4994-9e15-1b3c07d7b68b}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrous.MvvmCross.Plugins.XamPhotos.WinRT\Cirrious.MvvmCross.Plugins.XamPhotos.WinRT.csproj">
-      <Project>{d3c66696-a6d4-4a33-8440-b12043b0c828}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.WinRT</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

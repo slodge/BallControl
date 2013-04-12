@@ -11,10 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using Cirrious.MvvmCross.Commands;
-using Cirrious.MvvmCross.ExtensionMethods;
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
-using Cirrious.MvvmCross.Plugins.XamPhotos;
+using Cirrious.MvvmCross.ViewModels;
 using Cirrious.Sphero.WorkBench.Core.Interfaces;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
 
@@ -22,10 +21,11 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 {
     public class SpheroViewModel : BaseViewModel, ISpheroParentViewModel
     {
-        private readonly string _name;
+        private string _name;
         private IConnectedSphero _connectedSphero;
         private bool _shutdownCalled;
         private bool _isConnecting;
+        private List<ISpheroChildViewModel> _childViewModels;
 
         public SpheroMovementViewModel Movement { get; private set; }
 
@@ -49,11 +49,9 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
             }
         }
 
-        private readonly List<ISpheroChildViewModel> _childViewModels;
-
-        public SpheroViewModel(string name)
+        public void Init(string name)
         {
-            _name = name;
+             _name = name;
             Movement = new SpheroMovementViewModel(this);
             AccelMovement = new SpheroAccelMovementViewModel(this);
             Color = new SpheroColorViewModel(this);
@@ -74,26 +72,28 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
             DoConnect();
         }
 
-        protected override void Shutdown()
+        public void Shutdown()
         {
             _shutdownCalled = false;
             ClearConnectedSphero();
-            base.Shutdown();
         }
 
         public ICommand TakePhotoCommand
         {
-            get { return new MvxRelayCommand(DoTakePhoto); }
+            get { return new MvxCommand(DoTakePhoto); }
         }
 
         private void DoTakePhoto()
         {
+#warning Pictures removed
+#if false
             Cirrious.MvvmCross.Plugins.XamPhotos.PluginLoader.Instance.EnsureLoaded();
-            var photoPicker = this.GetService<IPhotoPicker>();
+            var photoPicker = Mvx.Resolve<IPhotoPicker>();
             photoPicker.TakeAndStorePhoto(result =>
                 {
                     /* ignored for now */
                 });
+#endif
         }
 
         private void ClearConnectedSphero()
@@ -129,7 +129,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
             RaisePropertyChanged(() => IsConnecting);
 
-            var listService = this.GetService<ISpheroListService>();
+            var listService = Mvx.Resolve<ISpheroListService>();
             var availableSphero = listService.AvailableSpheros.FirstOrDefault(s => s.Name == _name);
 
             if (availableSphero == null)
@@ -186,7 +186,7 @@ namespace Cirrious.Sphero.WorkBench.Core.ViewModels
 
         public ICommand CheckConnectionCommand
         {
-            get { return new MvxRelayCommand(DoCheckConnection); }
+            get { return new MvxCommand(DoCheckConnection); }
         }
 
         private void DoCheckConnection()

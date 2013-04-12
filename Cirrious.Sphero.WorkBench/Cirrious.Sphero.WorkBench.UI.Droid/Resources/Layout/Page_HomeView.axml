@@ -12,11 +12,16 @@
     local:MvxBind="{'Visibility':{'Path':'IsLoading','Converter':'Visibility'}}"
       />
   -->
-  <Mvx.MvxBindableListView
+  <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+  android:text="Hello"></TextView>
+    
+  <Mvx.MvxListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
         local:MvxItemTemplate="@layout/listitem_availablesphero"
-        local:MvxBind="{'ItemsSource':{'Path':'ListService.AvailableSpheros'},'ItemClick':{'Path':'GoToSpheroCommand'}}"
+        local:MvxBind="ItemsSource ListService.AvailableSpheros;ItemClick GoToSpheroCommand"
       />
 </FrameLayout>
