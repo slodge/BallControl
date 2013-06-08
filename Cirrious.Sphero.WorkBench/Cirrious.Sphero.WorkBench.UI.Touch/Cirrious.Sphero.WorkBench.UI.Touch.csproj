@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -76,7 +76,23 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\Mvx\Touch\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Touch">
+      <HintPath>..\..\Mvx\Touch\Cirrious.CrossCore.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Touch">
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.Visibility.Touch.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Net, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Mvx\Touch\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>..\..\Mvx\Touch\System.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
@@ -96,22 +112,19 @@
       <HintPath>..\..\Mvx\Touch\CrossUI.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Color">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="CrossUI.Core">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\CrossUI.Core.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\CrossUI.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\MvvmCross\bin\Portable\Debug\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugin.Visibility.Touch">
-      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugin.Visibility.Touch.dll</HintPath>
+      <HintPath>..\..\Mvx\Portable\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Touch">
       <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Plugins.ResourceLoader.Touch.dll</HintPath>
@@ -150,19 +163,11 @@
     <BundleResource Include="Resources\second.png" />
     <BundleResource Include="Resources\second%402x.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Cirrious.Sphero.WorkBench.Core\Cirrious.Sphero.WorkBench.Core.csproj">
       <Project>{066482E7-A44C-4911-B983-E3A5E41CFB7C}</Project>
       <Name>Cirrious.Sphero.WorkBench.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.Touch\Cirrious.MvvmCross.Plugins.XamPhotos.Touch.csproj">
-      <Project>{F8C3BF4C-5633-4386-BE8F-8A1C13BF7B89}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos.Touch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos\Cirrious.MvvmCross.Plugins.XamPhotos.csproj">
-      <Project>{FF37BE9C-CF12-4994-9E15-1B3C07D7B68B}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.XamPhotos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Sphero\Cirrious.MvvmCross.Plugins.Sphero.Touch\Cirrious.MvvmCross.Plugins.Sphero.Touch.csproj">
       <Project>{FC2F0606-5A10-411A-B622-E7D39DA34D2B}</Project>
@@ -197,11 +202,7 @@
       <Name>Cirrious.MvvmCross.Plugins.Accelerometer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-    <Folder Include="Images\Tabs\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\Tabs\color.png" />
     <Content Include="Images\Tabs\tilt.png" />

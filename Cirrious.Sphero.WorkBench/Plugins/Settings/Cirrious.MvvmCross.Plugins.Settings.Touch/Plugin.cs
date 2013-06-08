@@ -8,6 +8,7 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 
+using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
 namespace Cirrious.MvvmCross.Plugins.Settings.Touch

@@ -16,8 +16,7 @@ using Cirrious.MvvmCross.Plugins.Sphero.Interfaces;
 namespace Cirrious.MvvmCross.Plugins.Sphero.Droid
 {
     public class Plugin
-        : IMvxPlugin
-          
+        : IMvxPlugin          
     {
         #region Implementation of IMvxPlugin
 

@@ -9,6 +9,8 @@
 
 using System;
 using System.Threading.Tasks;
+using Cirrious.CrossCore.Exceptions;
+using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.Plugins.Sphero.HackFileShare;
 using MonoTouch.ExternalAccessory;
 using MonoTouch.Foundation;

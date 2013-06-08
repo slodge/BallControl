@@ -8,10 +8,9 @@ using Cirrious.MvvmCross.Views;
 
 namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 {  
-	public class SpheroColorView : MvxTouchDialogViewController<SpheroColorViewModel>
+	public class SpheroColorView : MvxDialogViewController
     {
-        public SpheroColorView (MvxShowViewModelRequest request)
-			: base(request)
+        public SpheroColorView ()
         {
         }
 
@@ -30,7 +29,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
                                                     MinValue = 0.0f,
                                                     MaxValue = 255.0f
                                                 },
-                                            "{'Value':{'Path':'Red','Mode':'TwoWay'}}"),
+                                            "Value Red,Mode=TwoWay"),
 										Bind(
 											new FloatElement(null, null, 0.0f)
 											{
@@ -38,7 +37,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 											MinValue = 0.0f,
 											MaxValue = 255.0f
 										},
-										"{'Value':{'Path':'Green','Mode':'TwoWay'}}"),
+										"Value Green,Mode=TwoWay"),
 										Bind(
 											new FloatElement(null, null, 0.0f)
 											{
@@ -46,7 +45,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 											MinValue = 0.0f,
 											MaxValue = 255.0f
 										},
-										"{'Value':{'Path':'Blue','Mode':'TwoWay'}}"),
+										"Value Blue,Mode=TwoWay"),
 									}
                             };
         }

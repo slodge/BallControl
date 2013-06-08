@@ -133,6 +133,8 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             Turn(270);
             await WaitSeconds(0.5);
             Color(r.Next(255), r.Next(255), r.Next(255));
+            await WaitSeconds(0.5);
+            ZigLoop();
         }
 
         private async Task Hack3()
@@ -184,6 +186,18 @@ namespace Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views
             Turn(90);
             await OneSecond();
             Turn(270);
+            await OneSecond();
+        }
+
+        private async Task ZigLoop()
+        {
+            Turn(90);
+            await OneSecond();
+            Turn(90);
+            await OneSecond();
+            Turn(90);
+            await OneSecond();
+            Turn(90);
             await OneSecond();
         }
 

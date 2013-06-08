@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: Android.Runtime.ResourceDesignerAttribute("Cirrious.Sphero.WorkBench.UI.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Cirrious.Sphero.WorkBench.UI.Droid.Resource", IsApplication=true)]
 
 namespace Cirrious.Sphero.WorkBench.UI.Droid
 {
@@ -19,9 +19,9 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 	public partial class Resource
 	{
 		
-		Resource()
+		static Resource()
 		{
-			global::Android.Runtime.ResourceIdManager.UpdateIdValues ();
+			global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 		}
 		
 		public static void UpdateIdValues()
@@ -48,6 +48,11 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 			
 			// aapt resource value: 0x7f010002
 			public const int MvxTemplate = 2130771970;
+			
+			static Attribute()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
 			
 			private Attribute()
 			{
@@ -111,6 +116,11 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 			// aapt resource value: 0x7f020011
 			public const int Tab_Turn = 2130837521;
 			
+			static Drawable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
 			private Drawable()
 			{
 			}
@@ -130,6 +140,11 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 			
 			// aapt resource value: 0x7f040003
 			public const int text1 = 2130968579;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
 			
 			private Id()
 			{
@@ -166,6 +181,11 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 			// aapt resource value: 0x7f030008
 			public const int SplashScreen = 2130903048;
 			
+			static Layout()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
 			private Layout()
 			{
 			}
@@ -179,6 +199,11 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 			
 			// aapt resource value: 0x7f050000
 			public const int Hello = 2131034112;
+			
+			static String()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
 			
 			private String()
 			{
@@ -219,6 +244,11 @@ namespace Cirrious.Sphero.WorkBench.UI.Droid
 			
 			// aapt resource value: 0
 			public const int MvxListView_MvxItemTemplate = 0;
+			
+			static Styleable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
 			
 			private Styleable()
 			{

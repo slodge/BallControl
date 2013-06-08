@@ -139,6 +139,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Assets\Music\MusicLicense.txt" />
+    <Content Include="Assets\MugHotTuna800x480.png" />
+    <Content Include="Assets\Music\PSY.mp3" />
     <Content Include="Assets\Music\Tony_Warrior_reggaeton_pop1.mp3" />
     <Content Include="Assets\SpheroIcon100.png" />
     <Content Include="Assets\steeringwheel400.png" />

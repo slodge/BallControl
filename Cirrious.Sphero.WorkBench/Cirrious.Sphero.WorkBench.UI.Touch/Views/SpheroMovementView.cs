@@ -1,7 +1,7 @@
 
 using System;
 using System.Drawing;
-
+using Cirrious.MvvmCross.Touch.Views;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.Sphero.WorkBench.Core.ViewModels.SpheroSubViewModels;
@@ -10,19 +10,18 @@ using Cirrious.MvvmCross.Views;
 
 namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 {
-	public partial class SpheroMovementView : MvxBindingTouchViewController<SpheroMovementViewModel>
+	public partial class SpheroMovementView : MvxViewController
 	{
-		public SpheroMovementView (MvxShowViewModelRequest request) : base (request, "SpheroMovementView", null)
+	    public new SpheroMovementViewModel ViewModel
+	    {
+            get { return base.ViewModel as SpheroMovementViewModel; }
+            set { base.ViewModel = value; }
+	    }
+		public SpheroMovementView ()
+            : base ("SpheroMovementView", null)
 		{
 		}
 		
-		public override void DidReceiveMemoryWarning ()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning ();
-			
-			// Release any cached data, images, etc that aren't in use.
-		}
 		
 		public override void ViewDidLoad ()
 		{
@@ -38,7 +37,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 
 		private void SendRoll (double forwards, double right)
 		{
-			var position = new RelativePositionParameters()
+            var position = new CartesianPositionParameters()
 			{
 				X = forwards,
 				Y = right

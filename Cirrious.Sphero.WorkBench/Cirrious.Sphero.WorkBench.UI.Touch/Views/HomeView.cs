@@ -2,21 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using Cirrious.MvvmCross.Binding.Touch.ExtensionMethods;
+using Cirrious.MvvmCross.Binding.BindingContext;
+using Cirrious.MvvmCross.Touch.Views;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.MvvmCross.Views;
-using Cirrious.MvvmCross.Binding.Interfaces;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.Sphero.WorkBench.Core.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 {
-    public partial class HomeView
-		: MvxBindingTouchTableViewController<HomeViewModel>
+    public class HomeView
+		: MvxTableViewController
     {
-        public HomeView (MvxShowViewModelRequest request) 
-            : base (request)
+        public new HomeViewModel ViewModel
+        {
+            get { return base.ViewModel as HomeViewModel; }
+            set { base.ViewModel = value; }
+        }
+        public HomeView() 
         {
         }
         
@@ -26,24 +30,23 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
             
 			Title = "Ball Control";
 			
-			var source = new MvxActionBasedBindableTableViewSource(
+			var source = new MvxActionBasedTableViewSource(
 				TableView,
 				UITableViewCellStyle.Subtitle,
 				new NSString("SpheroBalls"),
-				"{'TitleText':{'Path':'Name'}}",
+				"TitleText Name",
 				UITableViewCellAccessory.DisclosureIndicator);
 			
 			source.CellModifier = (cell) =>
 			{
-				cell.Image.DefaultImagePath = "Images/SpheroIcon100.png";
+				cell.ImageLoader.DefaultImagePath = "Images/SpheroIcon100.png";
 			};
-			source.SelectionChanged += (sender, args) => {
-				ViewModel.GoToSpheroCommand.Execute(args.AddedItems[0]);
-			};
+
+			source.SelectionChangedCommand = ViewModel.GoToSpheroCommand;
 			this.AddBindings(
 				new Dictionary<object, string>()
 				{
-				{ source, "{'ItemsSource':{'Path':'ListService.AvailableSpheros'}}" }
+				{ source, "ItemsSource ListService.AvailableSpheros" }
 				});
 			
 			TableView.Source = source;

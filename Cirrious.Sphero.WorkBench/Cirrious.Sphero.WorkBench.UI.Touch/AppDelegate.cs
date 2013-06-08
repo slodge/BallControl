@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.MvvmCross.Touch.Views.Presenters;
-using Cirrious.MvvmCross.Interfaces.ViewModels;
-using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Touch.Platform;
-using Cirrious.MvvmCross.Interfaces.ServiceProvider;
 
 namespace Cirrious.Sphero.WorkBench.UI.Touch
 {
@@ -18,7 +16,6 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch
 	[Register ("AppDelegate")]
 	public partial class AppDelegate 
 		: MvxApplicationDelegate
-	    , IMvxServiceConsumer
 	{
 		// class-level declarations
 		UIWindow window;
@@ -41,7 +38,7 @@ namespace Cirrious.Sphero.WorkBench.UI.Touch
 			setup.Initialize();
 			
 			// start the app
-			var start = this.GetService<IMvxStartNavigation>();
+			var start = Mvx.Resolve<IMvxAppStart>();
 			start.Start();
 
 			// make the window visible

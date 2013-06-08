@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cirrious.MvvmCross.Dialog.Touch;
-using Cirrious.MvvmCross.Interfaces.ViewModels;
-using Cirrious.MvvmCross.Touch.ExtensionMethods;
 using Cirrious.MvvmCross.Touch.Views;
-using Cirrious.MvvmCross.Views;
+using Cirrious.MvvmCross.ViewModels;
 using MonoTouch.UIKit;
 using Cirrious.Sphero.WorkBench.Core.ViewModels;
 
 namespace Cirrious.Sphero.WorkBench.UI.Touch.Views
 {
     public sealed class SpheroView
-         : MvxTouchTabBarViewController<SpheroViewModel>
+         : MvxTabBarViewController
     {
         bool _viewDidLoadCallNeeded;
 
-		public SpheroView(MvxShowViewModelRequest request) 
-            : base(request)
+        public new SpheroViewModel ViewModel
+        {
+            get { return base.ViewModel as SpheroViewModel; }
+            set { base.ViewModel = value; }
+        }
+
+		public SpheroView() 
         {
             if (_viewDidLoadCallNeeded)
                 ViewDidLoad();

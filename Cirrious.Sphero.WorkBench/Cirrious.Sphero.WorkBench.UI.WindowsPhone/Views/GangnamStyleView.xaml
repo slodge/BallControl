@@ -6,9 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:Cirrious.Sphero.WorkBench.UI.WindowsPhone.Views"
-    xmlns:commandbinding="clr-namespace:Cirrious.MvvmCross.WindowsPhone.Commands;assembly=Cirrious.MvvmCross.WindowsPhone"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -17,27 +14,32 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!--
-        <Image Stretch="UniformToFill" Source="/Assets/Psy/psy1.jpg" Grid.RowSpan="2" ></Image>
-        -->
-        <Image Stretch="None" Margin="0,120,0,0" Source="/Assets/store300.png" Grid.RowSpan="2" ></Image>
+        <Image Stretch="UniformToFill" Source="/Assets/MugHotTuna800x480.png" Grid.RowSpan="2" ></Image>
+        <Image Stretch="None" Margin="-50,220,0,0" HorizontalAlignment="Left" Source="/Assets/store300.png" Grid.RowSpan="2" ></Image>
         <!--TitlePanel contains the name of the application and page title-->
+        <!--
         <Grid Grid.Row="0" Margin="12,17,12,28" >
             <Rectangle Fill="Black" Opacity="0.5"></Rectangle>
             <StackPanel Grid.Row="0" Margin="12,17,0,28" >
                 <TextBlock Text="BALL CONTROL" Style="{StaticResource PhoneTextNormalStyle}"/>
-                <TextBlock Text="Dancing Spheros" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <TextBlock Text="Evolve Spheros - Xamarin" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             </StackPanel>
         </Grid>
+        -->
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <!--
             <MediaElement Source="/Assets/Music/Tony_Warrior_reggaeton_pop1.mp3"  AutoPlay="True" x:Name="MediaPlayer" MediaOpened="MediaElement_OnMediaOpened" ></MediaElement>
+            -->
+            <MediaElement Source="/Assets/Music/Psy.mp3"  AutoPlay="True" x:Name="MediaPlayer" MediaOpened="MediaElement_OnMediaOpened" ></MediaElement>
         </Grid>
+        <!-- 
         <TextBlock Grid.Row="1" Margin="12" Text="Music: Reggaeton Pop by Tony Warrior" VerticalAlignment="Bottom" HorizontalAlignment="Right" Foreground="Black"></TextBlock>
+       -->
     </Grid>
 </views:BaseGangnamStyleView>
